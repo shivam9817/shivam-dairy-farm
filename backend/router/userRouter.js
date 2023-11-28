@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const logger = require('../config/logger');
 const { UserModel } = require('../model/userModel');
 const { blacklistModel } = require('../model/blacklistModel');
+const punycode = require('punycode');
 
 const userRouter = express.Router();
 

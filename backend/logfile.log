@@ -1,3 +1,7 @@
 [2023-11-23T10:42:45.430Z] [INFO] [::ffff:127.0.0.1] User logged in: dbb@gmail.com
 [2023-11-23T10:43:26.989Z] [INFO] [::ffff:127.0.0.1] User logged in: d@gmail.com
 [2023-11-23T11:10:33.904Z] [INFO] [::ffff:127.0.0.1] User logged in: dbb@gmail.com
+[2023-11-25T08:43:14.528Z] [WARN] [::ffff:127.0.0.1] Invalid or expired refresh token for token refresh
+[2023-11-25T08:43:59.140Z] [INFO] [::ffff:127.0.0.1] User registered: fsdklj@gmail.com
+[2023-11-25T08:49:31.661Z] [ERROR] [::ffff:127.0.0.1] User registration failed: Operation `users.findOne()` buffering timed out after 10000ms
+[2023-11-25T08:50:13.342Z] [ERROR] [::ffff:127.0.0.1] User registration failed: Operation `users.findOne()` buffering timed out after 10000ms
