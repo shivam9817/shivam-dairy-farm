@@ -68,7 +68,7 @@ userRouter.post('/login', async (req, res) => {
                 expiresIn: '7d'
             });
 
-            const refreshToken = jwt.sign({ userId: user._id }, process.env.refreshSecretKey, {
+            const refreshToken = jwt.sign({ userId: user._id }, process.env.refreshSecretkey, {
                 expiresIn: '30d'
             });
 
@@ -97,7 +97,6 @@ userRouter.get('/getnewtoken', (req, res) => {
     try {
         const refresh_token = req.headers.authorization;
         const clientIp = req.ip;
-
         if (!refresh_token) {
             // Log missing refresh token
             logger.warn({ message: 'Missing refresh token for token refresh', ip: clientIp });
@@ -105,7 +104,7 @@ userRouter.get('/getnewtoken', (req, res) => {
         }
 
         // Verify the refresh token and generate a new access token
-        jwt.verify(refresh_token, process.env.refreshSecretKey, (err, decoded) => {
+        jwt.verify(refresh_token, process.env.refreshSecretkey, (err, decoded) => {
             if (err) {
                 // Log invalid or expired refresh token
                 logger.warn({ message: 'Invalid or expired refresh token for token refresh', ip: clientIp });

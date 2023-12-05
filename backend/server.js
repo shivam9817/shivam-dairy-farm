@@ -3,12 +3,13 @@ const {connectedDB}=require("./config/db")
 const cors=require("cors")
 
 const{userRouter}=require("./router/userRouter")
+const{productRouter}=require("./router/productRouter")
 const{authMiddleware}=require("./middleware/authenticate")
 const app=express()
 require("dotenv").config()
 
 app.use(cors())
-
+ 
 app.use(express.json())
 
 
@@ -22,6 +23,8 @@ app.get("/",async(req,res)=>{
 })
 
 app.use("/user",userRouter)
+app.use(authMiddleware)
+app.use("/product",productRouter)
 
 
 /* listen the server code present here */
