@@ -3,9 +3,9 @@
 const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
-  user: { type: String, required: true },
-  rating: { type: Number, required: true },
-  comment: { type: String }
+  user: { type: String},
+  rating: { type: Number},
+  comment: { type: String}
 });
 
 const productSchema = new mongoose.Schema({

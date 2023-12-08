@@ -37,7 +37,7 @@ productRouter.get("/",async (req, res) => {
       res.status(200).json(data);
     }
   } catch (error) {
-    res.status(404).send({"msg":"Data not Found","error":error.message})
+    res.status(404).send({msg:"Data not Found",error:error.message})
   }
 });
 
@@ -51,7 +51,7 @@ productRouter.post("/search",async (req, res) => {
         });
 
         if (products.length === 0) {
-            return res.status(404).json({ "error": "No Products found" });
+            return res.status(404).json({ error: "No Products found" });
         }
 
         return res.status(200).json(products);
@@ -81,7 +81,7 @@ productRouter.post("/create", async (req, res) => {
     await product.save();
     res.status(200).json("Product Created Successfully!");
   } catch (error) {
-    res.status(400).send({ "msg": "Product not created", "error": error.message });
+    res.status(400).send({ msg: "Product not created", error: error.message });
   }
 });
 
@@ -91,10 +91,10 @@ productRouter.patch("/update/:id",checkRole('update'),async(req,res)=>{
     const productId= req.params.id;
     try{
     await ProductModel.findByIdAndUpdate({_id:productId})
-    return res.status(200).json({"msg":`product with id:${productId} has been updated Successfully`})
+    return res.status(200).json({msg:`product with id:${productId} has been updated Successfully`})
     }
     catch(error){
-        return   res.status(401).send({'msg':'Not Updated','Error':error.message})
+        return   res.status(401).send({message:'Not Updated','Error':error.message})
     }
 
 })
@@ -105,9 +105,9 @@ productRouter.delete("/delete/:id", checkRole('delete'),async (req, res) => {
   const productId = req.params.id;
   try {
     await ProductModel.findByIdAndDelete(productId); // Pass productId directly as a string
-    res.status(200).json({ "msg": `The Product of ${productId} is deleted successfully` });
+    res.status(200).json({ msg: `The Product of ${productId} is deleted successfully` });
   } catch (error) {
-    res.status(400).send({ "msg": "Unable to delete", "error": error.message });
+    res.status(400).send({ msg: "Unable to delete", error: error.message });
   }
 });
 

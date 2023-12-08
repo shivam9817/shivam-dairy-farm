@@ -18,7 +18,7 @@ userRouter.post('/register', async (req, res) => {
         if (!email || !username || !password) {
             // Log missing fields
             logger.warn({ message: 'Missing fields for user registration', ip: clientIp });
-            return res.status(400).json({ error: 'Please provide all the fields' });
+            return res.status(400).json({message: 'Please provide all the fields' ,error: err.message});
         }
 
         // Check for duplicate email
@@ -37,13 +37,13 @@ userRouter.post('/register', async (req, res) => {
 
             // Log successful registration
             logger.info({ message: `User registered: ${email}`, ip: clientIp });
-            res.json({ msg: 'User has been registered' });
+            res.json({ message: 'User has been registered' });
         }
     } catch (err) {
         // Log registration failure
         logger.error({ message: `User registration failed: ${err.message}`, ip: req.ip });
         console.error(err);
-        res.status(500).json({ msg: 'User not registered', error: err.message });
+        res.status(500).json({ message: 'User not registered', error: err.message });
     }
 });
 
@@ -52,12 +52,13 @@ userRouter.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
         const clientIp = req.ip;
-        const user = await UserModel.findOne({ email });
+        const user = await UserModel.findOne({email});
+        console.log(user.role)
 
         if (!user) {
             // Log invalid credentials
             logger.warn({ message: `Invalid login attempt for user: ${email}`, ip: clientIp });
-            return res.status(401).json({ error: 'Invalid Credentials' });
+            return res.status(401).json({message:"Invalid Credentials"});
         }
 
         // Compare passwords
@@ -74,22 +75,23 @@ userRouter.post('/login', async (req, res) => {
             });
 
             const uid = user._id;
+            const role=user.role
             res.cookie('access_token', accessToken, { maxAge: 900000, httpOnly: true });
             res.cookie('refresh_token', refreshToken, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true });
 
             // Log successful login
             logger.info({ message: `User logged in: ${email}`, ip: clientIp });
-            res.json({ msg: 'Login Successfully', accessToken, refreshToken, uid });
+            res.json({ message: 'Login Successfully', accessToken, refreshToken, uid,role });
         } else {
             // Log invalid credentials
             logger.warn({ message: `Invalid login attempt for user: ${email}`, ip: clientIp });
-            res.status(401).json({ msg: 'Invalid Credentials' });
+            res.status(401).json({ message: 'Invalid Credentials' });
         }
     } catch (err) {
         // Log login failure
         logger.error({ message: `Login failed: ${err.message}`, ip: req.ip });
         console.error(err);
-        res.status(500).json({ msg: 'Something Went Wrong', error: err.message });
+        res.status(500).json({ message: 'Something Went Wrong', error: err.message });
     }
 });
 

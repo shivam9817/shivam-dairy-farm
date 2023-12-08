@@ -1,2 +1,9 @@
 [2023-12-05T10:38:29.665Z] [INFO] [::ffff:127.0.0.1] User logged in: dbsab@gmail.com
 [2023-12-05T10:38:56.464Z] [WARN] [::ffff:127.0.0.1] Invalid login attempt for user: undefined
+[2023-12-08T13:58:52.688Z] [INFO] [::ffff:127.0.0.1] User registered: e@gmail.com
+[2023-12-08T13:59:08.155Z] [ERROR] [::ffff:127.0.0.1] Login failed: role is not defined
+[2023-12-08T13:59:45.270Z] [INFO] [::ffff:127.0.0.1] User logged in: e@gmail.com
+[2023-12-08T14:00:36.643Z] [INFO] [::ffff:127.0.0.1] User logged in: e@gmail.com
+[2023-12-08T14:01:59.538Z] [INFO] [::ffff:127.0.0.1] User logged in: e@gmail.com
+[2023-12-08T14:16:13.186Z] [ERROR] [::ffff:127.0.0.1] Login failed: Cannot read properties of null (reading 'role')
+[2023-12-08T14:40:07.922Z] [INFO] [::ffff:127.0.0.1] User logged in: d@gmail.com
