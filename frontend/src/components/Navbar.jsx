@@ -4,10 +4,11 @@ import { IoPersonOutline } from "react-icons/io5";
 import { IoMdLogIn } from "react-icons/io";
 import { IoWalletOutline } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { RiAdminFill } from "react-icons/ri";
 import { useEffect } from "react";
 import logo from "../asset/logoAlicia.png"
 import person from "../asset/person.png"
+import { useAuth } from "../Routes/AuthContext";
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -15,18 +16,21 @@ const Navbar = () => {
   const [mobilestate, setmobilestate] = useState(false);
   const [accessToken, setAccessToken] = useState("");
   const navigate = useNavigate();
+  const { setToken } = useAuth()
 
- useEffect(() => {
+  useEffect(() => {
     const storedAccessToken = localStorage.getItem("access_token");
     if (storedAccessToken) {
       setIsLoggedIn(true);
       setAccessToken(storedAccessToken);
+      setToken(storedAccessToken)
     }
   }, []);
 
- 
+
   const handleLogout = () => {
     localStorage.removeItem("access_token");
+    localStorage.removeItem("user_role")
 
     // Make a request to your backend to logout (optional)
     // axios.post("http://localhost:8080/user/logout", {
@@ -37,10 +41,10 @@ const Navbar = () => {
 
     setIsLoggedIn(false);
     setAccessToken("");
-
+    setToken("")
     alert("User Logged out!")
 
-    navigate("/login"); 
+    navigate("/");
   };
 
 
@@ -61,7 +65,7 @@ const Navbar = () => {
               <div class="hidden md:block text-right">
                 <div class="mr-4 font-bold ml-24 space-x-4">
                   <Link
-                    to="/home"
+                    to="/"
                     class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 rounded-md px-3 py-2 text-xl"
                     aria-current="page"
                   >
@@ -74,10 +78,10 @@ const Navbar = () => {
                     Products
                   </Link>
                   <Link
-                    to="/about"
+                    to="/blog"
                     class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 rounded-md px-3 py-2 text-xl"
                   >
-                    About
+                    Blogs
                   </Link>
                   <Link
                     to="/offer"
@@ -86,10 +90,10 @@ const Navbar = () => {
                     Offers
                   </Link>
                   <Link
-                    to="/cart"
+                    to="/about"
                     class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 rounded-md px-3 py-2 text-xl"
                   >
-                    Cart
+                    About
                   </Link>
                 </div>
               </div>
@@ -98,7 +102,7 @@ const Navbar = () => {
               <div class="ml-4 flex items-center md:ml-6">
                 <button
                   type="button"
-                  class="rounded-full bg-blue-500 p-1 text-blue-200 hover:text-blue-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-500"
+                  class="rounded-full bg-blue-900 p-1 text-blue-100 hover:text-blue-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-500"
                 >
                   <span class="sr-only">View notifications</span>
                   <svg
@@ -129,7 +133,7 @@ const Navbar = () => {
                     >
                       <span class="sr-only">Open user menu</span>
                       <img
-                        class="h-8 w-8 rounded-full"
+                        class="h-8 w-10 rounded-full"
                         src={person}
                         alt=""
                       />
@@ -151,7 +155,7 @@ const Navbar = () => {
                       <>
                         <Link
                           to="/profile"
-                          class="block px-4 py-2 text-xl text-blue-900"
+                          class="block px-4 py-2 text-md font-semibold text-blue-900"
                           role="menuitem"
                           tabindex="-1"
                           id="user-menu-item-0"
@@ -163,7 +167,7 @@ const Navbar = () => {
                         <hr />
                         <Link
                           to="/wallet"
-                          class="block px-4 py-2 text-xl text-blue-900"
+                          class="block px-4 py-2 text-md font-semibold text-blue-900"
                           role="menuitem"
                           tabindex="-1"
                           id="user-menu-item-1"
@@ -174,10 +178,21 @@ const Navbar = () => {
                         </Link>
                         <hr />
                         <Link
-                          to="/
-                          "
+                          to="/admin"
+                          class="block px-4 py-2 text-md font-semibold text-blue-900"
+                          role="menuitem"
+                          tabindex="-1"
+                          id="user-menu-item-1"
+                        >
+                          <span class="flex items-center">
+                            <RiAdminFill class="mr-2" /> Admin
+                          </span>
+                        </Link>
+                        <hr />
+                        <Link
+                          to="/"
                           onClick={handleLogout}
-                          class="block px-4 py-2 text-xl text-blue-900"
+                          class="block px-4 py-2 text-md font-semibold text-blue-900"
                           role="menuitem"
                           tabindex="-1"
                           id="user-menu-item-2"
@@ -188,10 +203,21 @@ const Navbar = () => {
                         </Link>
                       </>
                     ) : (
-                      <>
+                      <> <Link
+                        to="/admin"
+                        class="block px-4 py-2 text-md font-semibold text-blue-900"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="user-menu-item-1"
+                      >
+                        <span class="flex items-center">
+                          <RiAdminFill class="mr-2" /> Admin
+                        </span>
+                      </Link>
+                        <hr />
                         <Link
                           to="/login"
-                          class="block px-4 py-2 text-xl text-blue-900"
+                          class="block px-4 py-2 text-md font-semibold text-blue-900"
                           role="menuitem"
                           tabindex="-1"
                           id="user-menu-item-2"
@@ -252,7 +278,7 @@ const Navbar = () => {
         </div>
 
         <div
-          class="md:hidden"
+          class="md:hidden bg-blue-100"
           id="mobile-menu"
           style={{
             display: mobilestate ? "flex" : "none",
@@ -261,8 +287,8 @@ const Navbar = () => {
         >
           <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             <Link
-              to="/Home"
-              class=" text-blue-900 hover:bg-blue-700 hover:text-blue-100 block rounded-md px-3 py-2 text-xl"
+              to="/"
+              class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 block rounded-md px-3 py-2 text-xl"
               aria-current="page"
             >
               Home
@@ -274,10 +300,10 @@ const Navbar = () => {
               Products
             </Link>
             <Link
-              to="/about"
+              to="/blog"
               class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 block rounded-md px-3 py-2 text-xl"
             >
-              About
+              Blogs
             </Link>
             <Link
               to="/offer"
@@ -286,10 +312,10 @@ const Navbar = () => {
               Offers
             </Link>
             <Link
-              to="/cart"
+              to="/about"
               class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 block rounded-md px-3 py-2 text-xl"
             >
-              Cart
+              About
             </Link>
           </div>
           <div class="border-t border-blue-700 pb-3 pt-4">
@@ -315,12 +341,13 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
+            {isLoggedIn? (
             <div class="mt-3 space-y-1 px-2">
               <Link
                 to="/profile"
                 class="block rounded-md px-3 py-2 text-xl text-blue-400 hover:bg-blue-700 hover:text-blue-100"
               >
-                <span class="flex items-center justify-center text-blue-900">
+                <span class="flex items-center justify-center text-blue-900 hover:text-blue-100">
                   <IoPersonOutline class="mr-2" /> Your Profile
                 </span>
               </Link>
@@ -328,28 +355,57 @@ const Navbar = () => {
                 to="/wallet"
                 class="block rounded-md px-3 py-2 text-xl text-blue-400 hover:bg-blue-700 hover:text-blue-100"
               >
-                <span class="flex items-center justify-center text-blue-900">
+                <span class="flex items-center justify-center text-blue-900 hover:text-blue-100">
                   <IoWalletOutline class="mr-2" />Wallet
+                </span>
+              </Link>
+              <Link
+                to="/admin"
+                class="block rounded-md px-3 py-2 text-xl text-blue-400 hover:bg-blue-700 hover:text-blue-100"
+              >
+                <span class="flex items-center justify-center text-blue-900 hover:text-blue-100">
+                  <RiAdminFill class="mr-2" /> Admin
+                </span>
+              </Link>
+              <Link
+                to="/"
+                onClick={handleLogout}
+                class="block rounded-md px-3 py-2 text-xl text-blue-400 hover:bg-blue-700 hover:text-blue-100"
+              >
+                <span class="flex items-center justify-center text-blue-900 hover:text-blue-100">
+                <IoMdLogIn class="mr-2" /> Log out
+                </span>
+              </Link>
+            </div>
+            ):(
+              <div class="mt-3 space-y-1 px-2">
+              <Link
+                to="/admin"
+                class="block rounded-md px-3 py-2 text-xl text-blue-400 hover:bg-blue-700 hover:text-blue-100"
+              >
+                <span class="flex items-center justify-center text-blue-900 hover:text-blue-100">
+                  <RiAdminFill class="mr-2" /> Admin
                 </span>
               </Link>
               <Link
                 to="/login"
                 class="block rounded-md px-3 py-2 text-xl text-blue-400 hover:bg-blue-700 hover:text-blue-100"
               >
-                <span class="flex items-center justify-center text-blue-900">
+                <span class="flex items-center justify-center text-blue-900 hover:text-blue-100">
                   <IoMdLogIn class="mr-2" /> Log in
                 </span>
               </Link>
             </div>
+            )}
           </div>
         </div>
       </nav>
 
       {/* <main>
-      <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-       
-      </div>
-    </main> */}
+    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+     
+    </div>
+  </main> */}
     </div>
   );
 };

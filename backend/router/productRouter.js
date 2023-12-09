@@ -90,6 +90,7 @@ productRouter.post("/create", async (req, res) => {
 
 productRouter.patch("/update/:id",checkRole('update'),async(req,res)=>{
     const productId= req.params.id;
+    console.log("Received token:", req.headers.authorization);
     try{
     await ProductModel.findByIdAndUpdate({_id:productId})
     return res.status(200).json({message:`product with id:${productId} has been updated Successfully`})

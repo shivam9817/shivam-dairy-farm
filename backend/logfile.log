@@ -7,3 +7,68 @@
 [2023-12-08T14:01:59.538Z] [INFO] [::ffff:127.0.0.1] User logged in: e@gmail.com
 [2023-12-08T14:16:13.186Z] [ERROR] [::ffff:127.0.0.1] Login failed: Cannot read properties of null (reading 'role')
 [2023-12-08T14:40:07.922Z] [INFO] [::ffff:127.0.0.1] User logged in: d@gmail.com
+[2023-12-08T18:39:12.231Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-08T18:39:14.661Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-08T18:39:17.589Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-08T18:39:18.194Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-08T18:39:18.393Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-08T18:39:18.624Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-08T18:42:29.675Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-08T18:42:31.108Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-08T18:42:33.040Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-08T18:42:33.260Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-08T18:42:33.454Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-08T18:42:45.431Z] [WARN] [::1] Duplicate email or username for user registration
+[2023-12-08T18:42:56.908Z] [INFO] [::1] User registered: shrutisen121@gmail.com
+[2023-12-08T18:42:59.389Z] [WARN] [::1] Duplicate email or username for user registration
+[2023-12-08T19:14:10.905Z] [WARN] [::1] Duplicate email or username for user registration
+[2023-12-09T06:49:03.342Z] [WARN] [::1] Duplicate email or username for user registration
+[2023-12-09T06:49:08.473Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-09T06:49:09.638Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-09T06:49:09.903Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-09T06:49:10.273Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-09T06:49:11.257Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-09T06:49:20.651Z] [INFO] [::1] User logged in: eve.holt@reqres.in
+[2023-12-09T06:54:35.615Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-09T06:54:35.982Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-09T06:54:36.765Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-09T06:54:36.771Z] [WARN] [::1] Invalid login attempt for user: abc123@gmail.com
+[2023-12-09T06:54:59.026Z] [WARN] [::1] Duplicate email or username for user registration
+[2023-12-09T06:55:05.406Z] [INFO] [::1] User registered: abc12@gmail.com
+[2023-12-09T06:55:19.731Z] [INFO] [::1] User logged in: abc12@gmail.com
+[2023-12-09T06:55:39.066Z] [WARN] [::1] Invalid login attempt for user: abc12@gmail.com
+[2023-12-09T06:56:05.398Z] [WARN] [::1] Invalid login attempt for user: abc12@gmail.com
+[2023-12-09T07:01:04.490Z] [INFO] [::1] User logged in: abc12@gmail.com
+[2023-12-09T07:03:15.949Z] [ERROR] [::1] Login failed: Cannot read properties of null (reading 'role')
+[2023-12-09T07:10:27.449Z] [ERROR] [::1] Login failed: Cannot read properties of null (reading 'role')
+[2023-12-09T07:10:35.273Z] [ERROR] [::1] Login failed: Cannot read properties of null (reading 'role')
+[2023-12-09T07:11:11.700Z] [WARN] [::1] Invalid login attempt for user: abcd12@gmail.com
+[2023-12-09T07:11:41.525Z] [WARN] [::1] Invalid login attempt for user: abcd12@gmail.com
+[2023-12-09T07:11:44.864Z] [WARN] [::1] Invalid login attempt for user: abcd12@gmail.com
+[2023-12-09T07:12:21.159Z] [WARN] [::1] Invalid login attempt for user: abcd12@gmail.com
+[2023-12-09T07:12:23.692Z] [WARN] [::1] Invalid login attempt for user: abcd12@gmail.com
+[2023-12-09T07:12:24.217Z] [WARN] [::1] Invalid login attempt for user: abcd12@gmail.com
+[2023-12-09T07:12:24.454Z] [WARN] [::1] Invalid login attempt for user: abcd12@gmail.com
+[2023-12-09T07:12:24.789Z] [WARN] [::1] Invalid login attempt for user: abcd12@gmail.com
+[2023-12-09T07:14:36.435Z] [WARN] [::1] Invalid login attempt for user: abcd12@gmail.com
+[2023-12-09T07:14:51.970Z] [WARN] [::1] Invalid login attempt for user: abcd12@gmail.com
+[2023-12-09T07:14:59.974Z] [WARN] [::1] Invalid login attempt for user: abc12@gmail.com
+[2023-12-09T07:15:04.878Z] [WARN] [::1] Invalid login attempt for user: abc12@gmail.com
+[2023-12-09T07:15:12.772Z] [WARN] [::1] Invalid login attempt for user: abc12@gmail.com
+[2023-12-09T07:15:26.091Z] [WARN] [::1] Invalid login attempt for user: abc12@gmail.com
+[2023-12-09T07:15:46.820Z] [WARN] [::1] Invalid login attempt for user: abc12@gmail.com
+[2023-12-09T07:15:56.408Z] [WARN] [::1] Invalid login attempt for user: eve.holt@reqres.in
+[2023-12-09T07:16:33.074Z] [WARN] [::1] Invalid login attempt for user: eve.holt@reqres.in
+[2023-12-09T07:18:23.124Z] [INFO] [::1] User registered: xyz12@gmail.com
+[2023-12-09T07:19:21.197Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-09T07:20:00.960Z] [WARN] [::1] Invalid login attempt for user: xyz12@gmail.com
+[2023-12-09T07:20:06.325Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-09T07:27:59.237Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-09T07:48:31.568Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-09T08:03:47.277Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-09T08:33:21.218Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-09T09:50:17.675Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-09T09:52:21.373Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-09T09:58:38.090Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-09T10:09:00.674Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-09T10:53:47.480Z] [INFO] [::1] User logged in: xyz12@gmail.com

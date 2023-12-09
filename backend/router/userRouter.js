@@ -53,7 +53,7 @@ userRouter.post('/login', async (req, res) => {
         const { email, password } = req.body;
         const clientIp = req.ip;
         const user = await UserModel.findOne({email});
-        console.log(user.role)
+        // console.log(user.role)
 
         if (!user) {
             // Log invalid credentials

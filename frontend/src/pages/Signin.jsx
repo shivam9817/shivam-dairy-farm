@@ -31,40 +31,24 @@ function SignInForm() {
         password,
       });
 
-      const { accessToken, refreshToken } = response.data;
+      const { accessToken, refreshToken, uid, role } = response.data;
 
       // Store tokens in local storage
       localStorage.setItem("access_token", accessToken);
-      localStorage.setItem("refresh_token", refreshToken);
+      localStorage.setItem('user_role', role);
 
       setAccessToken(accessToken);
       setRefreshToken(refreshToken);
      console.log("accessToken:",accessToken,"\n","refreshToken:",refreshToken)
-      alert("Logged in successfully");
+      alert(response.data.message);
 
       navigate("/");
     } catch (error) {
       console.error(error);
+      alert(error.response.data.message);
     }
   };
 
-  // const handleSignOut = () => {
-  //   // Clear tokens from local storage
-  //   localStorage.removeItem("access_token");
-  //   localStorage.removeItem("refresh_token");
-
-  //   setAccessToken("");
-  //   setRefreshToken("");
-
-  //   // Make a request to your backend to logout (optional)
-  //   axios.post("http://localhost:8080/user/logout", {
-  //     headers: {
-  //       Authorization: refreshToken, // Send the refresh token for logout
-  //     },
-  //   });
-
-  //   navigate("/login"); // Navigate to the login page or home page
-  // };
 
   return (
     <div className="form-container sign-in-container">

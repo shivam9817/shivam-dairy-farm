@@ -20,8 +20,8 @@ function SignUpForm() {
         role,
       });
 
-      alert("Successfully signed up! Login to continue.");
-      console.log(response.data);
+      alert(response.data.message);
+      console.log(response.data.message);
     } catch (error) {
       console.error("Error occurred:", error);
   
@@ -39,7 +39,7 @@ function SignUpForm() {
       }
   
       // Show an alert with a general error message
-      alert("Error occurred during sign-up. Please try again later.");
+      alert(error.response.data.message);
     }
   };
 
