@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Heading, IconButton, useToast, Image, CircularProgress, Box, Grid } from '@chakra-ui/react'
-import SingleProduct from './SingleProductPage';
+import ProductDetail from './ProductDetailPage';
 import axios from 'axios';
 
 const ProductPage = () => {
@@ -50,45 +50,30 @@ const ProductPage = () => {
   };
 
   return (
-    <Box bg={"gray.300"} pl={40} w={"100%"} h={"full"}>
+    <Box bg={"gray.300"} pl={40} pr={10} w={"100%"} h={"full"} pb={20}>
       <Heading size={'lg'} color={"gray.900"} mt={"20px"} mb={"20px"} >Manage Products</Heading>
-<hr />
+
       {isLoading ? (
         <CircularProgress
           alignItems={"center"}
           m={300}
           isIndeterminate
-          color='green.300'
+          color='blue.800'
         />
       ) : isError ? (
         <h2>Error Occurred while getting product list</h2>
       ) : (
-        <TableContainer color={"gray.900"} w={"99.9%"}>
-          <Table size={'lg'}>
-            <Thead>
-              <Tr maxH="60px">
-                <Th color={"gray.900"} width="10%">Photo</Th>
-                <Th color={"gray.900"} width="15%">Brand</Th>
-                <Th color={"gray.900"} width="10%">Price</Th>
-                <Th color={"gray.900"} width="15%">Category</Th>
-                <Th color={"gray.900"} width="20%">Description</Th>
-                <Th color={"gray.900"} width="10%">Quantity</Th>
-                <Th color={"gray.900"} width="10%">Edit</Th>
-                <Th color={"gray.900"} width="10%">Delete</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
+        
+        <Grid templateColumns='repeat(3, 1fr)' gap={10}>
               {data?.map(product => (
-                <SingleProduct
+                <ProductDetail
                   key={product._id}
                   product={product}
                   handleEdit={handleEdit}
                   handleDelete={handleDelete}
                 />
               ))}
-            </Tbody>
-          </Table>
-        </TableContainer>
+              </Grid>
       )}
     </Box>
   );

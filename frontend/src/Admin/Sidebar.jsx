@@ -47,7 +47,7 @@ function SidebarWithHeader({ children }) {
             <Box transition="3s ease" bg={useColorModeValue('blue.900', 'gray.900')} borderRight="1px"
                 borderRightColor={useColorModeValue('gray.200', 'gray.700')} w={{ base: 'full', md: 60 }} pos="fixed" h="full" {...rest}>
                 <Flex h="20" alignItems={"center"} justifyContent="center" mb={10} mt={6}>
-                    <Image w={200} src={logoAlicia} h={28} rounded={"3xl"} />
+                    <Image w={200} src={logoAlicia} h={28} />
                 </Flex>
                 {LinkItems.map((link) => (
                     <NavItem onClick={() => setComp(link.compName)} key={link.name} icon={link.icon} color={"white"}>{link.name}</NavItem>

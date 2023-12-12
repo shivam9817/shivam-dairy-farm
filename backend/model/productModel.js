@@ -10,10 +10,12 @@ const reviewSchema = new mongoose.Schema({
 
 const productSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  description: { type: String },
+  image: {type: String, required: true },
+  description: { type: String, required: true },
   price: { type: Number, required: true },
+  o_price: { type: Number, required: true },
   stock_quantity: { type: Number },
-  categories: { type: String },
+  categories: { type: String, required: true },
   reviews: [reviewSchema] // Define the array of reviews using the reviewSchema
 });
 

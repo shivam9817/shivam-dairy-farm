@@ -32,13 +32,6 @@ const Navbar = () => {
     localStorage.removeItem("access_token");
     localStorage.removeItem("user_role")
 
-    // Make a request to your backend to logout (optional)
-    // axios.post("http://localhost:8080/user/logout", {
-    //   headers: {
-    //     Authorization: refreshToken, 
-    //   },
-    // });
-
     setIsLoggedIn(false);
     setAccessToken("");
     setToken("")
@@ -52,46 +45,46 @@ const Navbar = () => {
 
   return (
     // <>
-    <div class="min-h-full">
-      <nav class="fixed bg-opacity-30 bg-blue-100 top-0 left-0 w-full z-50">
+    <div class="min-h-full" >
+      <nav class="fixed bg-opacity-80 h-20 bg-white top-0 left-0 w-full z-50">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
               <div
                 class="flex-shrink-0 hover:cursor-pointer"
               >
-                <img class="h-14 w-28" src={logo} alt="Your Company" />
+                <img class="h-18 w-44 mx-2 px-2 mt-3"  src={logo} alt="Your Company" />
               </div>
               <div class="hidden md:block text-right">
-                <div class="mr-4 font-bold ml-24 space-x-4">
+                <div class="mr-4 ml-24 space-x-4">
                   <Link
                     to="/"
-                    class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 rounded-md px-3 py-2 text-xl"
+                    class="text-black font-semibold  hover:text-green-600  px-3 py-2 text-xl"
                     aria-current="page"
                   >
                     Home
                   </Link>
                   <Link
                     to="/products"
-                    class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 rounded-md px-3 py-2 text-xl"
+                    class="text-black font-semibold  hover:text-green-600  rounded-md px-3 py-2 text-xl"
                   >
                     Products
                   </Link>
                   <Link
                     to="/blog"
-                    class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 rounded-md px-3 py-2 text-xl"
+                    class="text-black font-semibold  hover:text-green-600  rounded-md px-3 py-2 text-xl"
                   >
                     Blogs
                   </Link>
                   <Link
                     to="/offer"
-                    class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 rounded-md px-3 py-2 text-xl"
+                    class="text-black font-semibold  hover:text-green-600  rounded-md px-3 py-2 text-xl"
                   >
                     Offers
                   </Link>
                   <Link
                     to="/about"
-                    class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 rounded-md px-3 py-2 text-xl"
+                    class="text-black font-semibold  hover:text-green-600  rounded-md px-3 py-2 text-xl"
                   >
                     About
                   </Link>
@@ -102,11 +95,11 @@ const Navbar = () => {
               <div class="ml-4 flex items-center md:ml-6">
                 <button
                   type="button"
-                  class="rounded-full bg-blue-900 p-1 text-blue-100 hover:text-blue-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-500"
+                  class="rounded-full p-1 text-black  focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black hover:text-green-600"
                 >
                   <span class="sr-only">View notifications</span>
                   <svg
-                    class="h-6 w-6"
+                    class="h-8 w-8"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
@@ -125,18 +118,19 @@ const Navbar = () => {
                   <div>
                     <button
                       type="button"
-                      class="flex max-w-xs bg-blue-100 items-center rounded-full text-xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
+                      class="flex max-w-xs items-center font-bold rounded-full p-1 text-xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
                       id="user-menu-button"
                       aria-expanded="false"
                       aria-haspopup="true"
                       onClick={() => setstate(!state)}
                     >
                       <span class="sr-only">Open user menu</span>
-                      <img
+                      {/* <img
                         class="h-8 w-10 rounded-full"
                         src={person}
                         alt=""
-                      />
+                      /> */}
+                      <IoPersonOutline className="w-8 h-8 stroke-8 hover:text-green-600"/>
                     </button>
                   </div>
 
@@ -155,7 +149,7 @@ const Navbar = () => {
                       <>
                         <Link
                           to="/profile"
-                          class="block px-4 py-2 text-md font-semibold text-blue-900"
+                          class="block px-4 py-2 text-md font-semibold text-black"
                           role="menuitem"
                           tabindex="-1"
                           id="user-menu-item-0"
@@ -167,7 +161,7 @@ const Navbar = () => {
                         <hr />
                         <Link
                           to="/wallet"
-                          class="block px-4 py-2 text-md font-semibold text-blue-900"
+                          class="block px-4 py-2 text-md font-semibold text-black"
                           role="menuitem"
                           tabindex="-1"
                           id="user-menu-item-1"
@@ -179,7 +173,7 @@ const Navbar = () => {
                         <hr />
                         <Link
                           to="/admin"
-                          class="block px-4 py-2 text-md font-semibold text-blue-900"
+                          class="block px-4 py-2 text-md font-semibold text-black"
                           role="menuitem"
                           tabindex="-1"
                           id="user-menu-item-1"
@@ -192,7 +186,7 @@ const Navbar = () => {
                         <Link
                           to="/"
                           onClick={handleLogout}
-                          class="block px-4 py-2 text-md font-semibold text-blue-900"
+                          class="block px-4 py-2 text-md font-semibold text-black"
                           role="menuitem"
                           tabindex="-1"
                           id="user-menu-item-2"
@@ -205,7 +199,7 @@ const Navbar = () => {
                     ) : (
                       <> <Link
                         to="/admin"
-                        class="block px-4 py-2 text-md font-semibold text-blue-900"
+                        class="block px-4 py-2 text-md font-semibold text-black"
                         role="menuitem"
                         tabindex="-1"
                         id="user-menu-item-1"
@@ -217,7 +211,7 @@ const Navbar = () => {
                         <hr />
                         <Link
                           to="/login"
-                          class="block px-4 py-2 text-md font-semibold text-blue-900"
+                          class="block px-4 py-2 text-md font-semibold text-black"
                           role="menuitem"
                           tabindex="-1"
                           id="user-menu-item-2"
@@ -236,7 +230,7 @@ const Navbar = () => {
             <div class="-mr-2 flex md:hidden">
               <button
                 type="button"
-                class="inline-flex items-center justify-center rounded-md bg-blue-800 p-2 text-blue-400 hover:bg-blue-700 hover:text-blue-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-800"
+                class="inline-flex items-center justify-center rounded-md bg- p-2  text-black  hover:text-green-900  focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black-800"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
                 onClick={() => setmobilestate(!mobilestate)}
@@ -278,7 +272,7 @@ const Navbar = () => {
         </div>
 
         <div
-          class="md:hidden bg-blue-100"
+          class="md:hidden bg-white bg-opacity-90"
           id="mobile-menu"
           style={{
             display: mobilestate ? "flex" : "none",
@@ -288,41 +282,41 @@ const Navbar = () => {
           <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             <Link
               to="/"
-              class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 block rounded-md px-3 py-2 text-xl"
+              class="text-black font-semibold  hover:text-green-600  block rounded-md px-3 py-2 text-xl"
               aria-current="page"
             >
               Home
             </Link>
             <Link
               to="/products"
-              class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 block rounded-md px-3 py-2 text-xl"
+              class="text-black font-semibold  hover:text-green-600  block rounded-md px-3 py-2 text-xl"
             >
               Products
             </Link>
             <Link
               to="/blog"
-              class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 block rounded-md px-3 py-2 text-xl"
+              class="text-black font-semibold  hover:text-green-600  block rounded-md px-3 py-2 text-xl"
             >
               Blogs
             </Link>
             <Link
               to="/offer"
-              class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 block rounded-md px-3 py-2 text-xl"
+              class="text-black font-semibold  hover:text-green-600  block rounded-md px-3 py-2 text-xl"
             >
               Offers
             </Link>
             <Link
               to="/about"
-              class="text-blue-900 font-semibold hover:bg-blue-700 hover:text-blue-100 block rounded-md px-3 py-2 text-xl"
+              class="text-black font-semibold  hover:text-green-600  block rounded-md px-3 py-2 text-xl"
             >
               About
             </Link>
           </div>
-          <div class="border-t border-blue-700 pb-3 pt-4">
+          <div class="border-t border-black-700 pb-3 pt-4">
             <div class="flex items-center px-5">
               <button
                 type="button"
-                class="ml-auto flex-shrink-0 rounded-full bg-blue-800 p-1 text-blue-400 hover:text-blue-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-800"
+                class="ml-auto flex-shrink-0 rounded-full bg-black-800 p-1 text-black-400  focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black-800"
               >
                 <span class="sr-only">View notifications</span>
                 <svg
@@ -345,34 +339,34 @@ const Navbar = () => {
             <div class="mt-3 space-y-1 px-2">
               <Link
                 to="/profile"
-                class="block rounded-md px-3 py-2 text-xl text-blue-400 hover:bg-blue-700 hover:text-blue-100"
+                class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-green-600 "
               >
-                <span class="flex items-center justify-center text-blue-900 hover:text-blue-100">
+                <span class="flex items-center font-semibold justify-center text-black ">
                   <IoPersonOutline class="mr-2" /> Your Profile
                 </span>
               </Link>
               <Link
                 to="/wallet"
-                class="block rounded-md px-3 py-2 text-xl text-blue-400 hover:bg-blue-700 hover:text-blue-100"
+                class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-green-600 "
               >
-                <span class="flex items-center justify-center text-blue-900 hover:text-blue-100">
+                <span class="flex items-center font-semibold justify-center text-black ">
                   <IoWalletOutline class="mr-2" />Wallet
                 </span>
               </Link>
               <Link
                 to="/admin"
-                class="block rounded-md px-3 py-2 text-xl text-blue-400 hover:bg-blue-700 hover:text-blue-100"
+                class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-green-600 "
               >
-                <span class="flex items-center justify-center text-blue-900 hover:text-blue-100">
+                <span class="flex items-center font-semibold justify-center text-black ">
                   <RiAdminFill class="mr-2" /> Admin
                 </span>
               </Link>
               <Link
                 to="/"
                 onClick={handleLogout}
-                class="block rounded-md px-3 py-2 text-xl text-blue-400 hover:bg-blue-700 hover:text-blue-100"
+                class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-green-600 "
               >
-                <span class="flex items-center justify-center text-blue-900 hover:text-blue-100">
+                <span class="flex items-center font-semibold justify-center text-black ">
                 <IoMdLogIn class="mr-2" /> Log out
                 </span>
               </Link>
@@ -381,17 +375,17 @@ const Navbar = () => {
               <div class="mt-3 space-y-1 px-2">
               <Link
                 to="/admin"
-                class="block rounded-md px-3 py-2 text-xl text-blue-400 hover:bg-blue-700 hover:text-blue-100"
+                class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-green-600 "
               >
-                <span class="flex items-center justify-center text-blue-900 hover:text-blue-100">
+                <span class="flex items-center justify-center text-black ">
                   <RiAdminFill class="mr-2" /> Admin
                 </span>
               </Link>
               <Link
                 to="/login"
-                class="block rounded-md px-3 py-2 text-xl text-blue-400 hover:bg-blue-700 hover:text-blue-100"
+                class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-green-600 "
               >
-                <span class="flex items-center justify-center text-blue-900 hover:text-blue-100">
+                <span class="flex items-center justify-center text-black ">
                   <IoMdLogIn class="mr-2" /> Log in
                 </span>
               </Link>

@@ -14,10 +14,12 @@ import { FormControl, Input, Heading, FormLabel, Button, useToast, Flex, Box, Im
 const initForm = {
   description: '',
   name: '',
+  image: '',
   stock_quantity: '',
   price: '',
+  o_price: '',
   categories: '',
-  reviews:[] 
+  reviews: []
 }
 const AddProducts = () => {
 
@@ -30,8 +32,10 @@ const AddProducts = () => {
       ...form,
       [e.target.description]: e.target.value,
       [e.target.name]: e.target.value,
+      [e.target.image]: e.target.value,
       [e.target.stock_quantity]: e.target.value,
       [e.target.price]: e.target.value,
+      [e.target.o_price]: e.target.value,
       [e.target.categories]: e.target.value,
     });
   }
@@ -47,7 +51,7 @@ const AddProducts = () => {
         console.error('User not authenticated');
         return;
       }
-  
+
       const response = await fetch('http://localhost:8080/product/create', {
         method: 'POST',
         headers: {
@@ -56,9 +60,8 @@ const AddProducts = () => {
         },
         body: JSON.stringify(form),
       });
-  
+
       if (response.ok) {
-        // Product created successfully
         toast({
           title: 'Product Created',
           description: 'Product created successfully!',
@@ -66,12 +69,14 @@ const AddProducts = () => {
           duration: 3000,
           isClosable: true,
         });
+        setForm(initForm)
       } else {
         // Handle error
         const data = await response.json();
+        console.log(data.error)
         toast({
           title: 'Error',
-          description: data.msg || 'Failed to create product',
+          description: data.message || 'Failed to create product',
           status: 'error',
           duration: 3000,
           isClosable: true,
@@ -89,11 +94,11 @@ const AddProducts = () => {
       });
     }
   };
-  
-  
+
+
 
   return (
-    <Box bg={"gray.300"} pl={80 } pr={80} w={"100%"} >
+    <Box bg={"gray.300"} pl={80} pr={80} w={"100%"} >
       <Heading size='md' color={"gray.900"} >Add New Product</Heading>
       <Box  >
         <form onSubmit={formSubmitHandler}>
@@ -112,24 +117,37 @@ const AddProducts = () => {
               <Input m={2} type='text' name='name' background='#fff' onChange={formChangeHandler}
                 value={form.name}
                 placeholder="Enter Product Name" />
+              <FormLabel m={2} color={"gray.900"}>Product Image</FormLabel>
+              <Input m={2} type='text'
+                name='image'
+                background='#fff'
+                onChange={formChangeHandler}
+                value={form.image}
+                placeholder="Enter Product image url"
+              />
               <FormLabel color={"gray.900"} >Product Quantiy</FormLabel>
 
-              <Input m={2} type='number' name='stock_quantity' background='#fff' 
-              onChange={formChangeHandler} 
-              value={form.stock_quantity} 
-              placeholder="Enter Product Quantity"
+              <Input m={2} type='number' name='stock_quantity' background='#fff'
+                onChange={formChangeHandler}
+                value={form.stock_quantity}
+                placeholder="Enter Product Quantity"
               />
               <FormLabel m={2} color={"gray.900"} >Product Price</FormLabel>
 
-              <Input m={2} type='number' name='price' background='#fff' onChange={formChangeHandler} value={form.price} 
-               placeholder="Enter  Price"
+              <Input m={2} type='number' name='price' background='#fff' onChange={formChangeHandler} value={form.price}
+                placeholder="Enter  Price"
+              />
+              <FormLabel m={2} color={"gray.900"} >Product Offer Price</FormLabel>
+
+              <Input m={2} type='number' name='o_price' background='#fff' onChange={formChangeHandler} value={form.o_price}
+                placeholder="Enter Offer Price"
               />
               <FormLabel color={"gray.900"} >Product Categories</FormLabel>
 
               <Input m={2} type='text' name='categories' background='#fff'
-               onChange={formChangeHandler} 
-               value={form.categories}
-               placeholder="Enter Product categories"
+                onChange={formChangeHandler}
+                value={form.categories}
+                placeholder="Enter Product categories"
               />
               <Button m={2} type='submit' colorScheme='blue' marginTop='2' color={"gray.100"}>Add New Product</Button>
             </FormControl>
