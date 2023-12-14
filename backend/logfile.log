@@ -81,3 +81,16 @@
 [2023-12-09T19:39:57.406Z] [INFO] [::1] User logged in: xyz12@gmail.com
 [2023-12-09T19:40:53.339Z] [INFO] [::1] User logged in: xyz12@gmail.com
 [2023-12-11T18:34:35.921Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-14T06:50:24.246Z] [INFO] [::1] User logged in: abc123@gmail.com
+[2023-12-14T06:51:16.268Z] [INFO] [::1] User registered: john123@gmail.com
+[2023-12-14T06:51:27.620Z] [INFO] [::1] User logged in: john123@gmail.com
+[2023-12-14T07:19:38.835Z] [INFO] [::1] User logged in: john123@gmail.com
+[2023-12-14T07:55:47.710Z] [INFO] [::1] User logged in: john123@gmail.com
+[2023-12-14T07:58:19.593Z] [INFO] [::1] User logged in: john123@gmail.com
+[2023-12-14T07:59:33.684Z] [INFO] [::1] User logged in: john123@gmail.com
+[2023-12-14T08:00:01.632Z] [INFO] [::1] User logged in: john123@gmail.com
+[2023-12-14T08:12:07.783Z] [INFO] [::1] User logged in: john123@gmail.com
+[2023-12-14T10:50:51.751Z] [INFO] [::1] User logged in: john123@gmail.com
+[2023-12-14T11:02:08.196Z] [INFO] [::1] User logged in: john123@gmail.com
+[2023-12-14T14:34:03.838Z] [INFO] [::1] User logged in: john123@gmail.com
+[2023-12-14T14:38:30.389Z] [INFO] [::1] User logged in: john123@gmail.com

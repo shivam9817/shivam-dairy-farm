@@ -78,8 +78,10 @@ productRouter.post("/search",checkRole('read','write'), async (req, res) => {
 });
 
 
+productRouter.use(authMiddleware) //auth middleware present here
+
 /* =========================== This route for Adding the data to the database ====================================== */
-productRouter.use(authMiddleware)
+
 productRouter.post("/create",checkRole('write'), async (req, res) => {
   const payload = req.body;
   const token = req.headers.authorization;

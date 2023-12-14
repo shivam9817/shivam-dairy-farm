@@ -59,31 +59,31 @@ const Navbar = () => {
                 <div class="mr-4 ml-24 space-x-4">
                   <Link
                     to="/"
-                    class="text-black font-semibold  hover:text-orange-600  px-3 py-2 text-xl"
+                    class="text-black hover:text-orange-600  px-3 py-2 text-md"
                     aria-current="page"
                   >
                     Home
                   </Link>
                   <Link
                     to="/products"
-                    class="text-black font-semibold  hover:text-orange-600  rounded-md px-3 py-2 text-xl"
+                    class="text-black hover:text-orange-600  rounded-md px-3 py-2 text-md"
                   >
                     Products
                   </Link>
                   <Link
                     to="/blog"
-                    class="text-black font-semibold  hover:text-orange-600  rounded-md px-3 py-2 text-xl"
+                    class="text-black hover:text-orange-600  rounded-md px-3 py-2 text-md"
                   >
                     Blogs
                   </Link>
                   <Link 
                   to="/offer" 
-                  className="text-black font-semibold hover:text-orange-600 hover:glow rounded-md px-3 py-2 text-xl">
+                  className="text-black hover:text-orange-600 hover:glow rounded-md px-3 py-2 text-md">
                     Offers
                   </Link>
                   <Link
                     to="/about"
-                    class="text-black font-semibold  hover:text-orange-600  rounded-md px-3 py-2 text-xl"
+                    class="text-black hover:text-orange-600  rounded-md px-3 py-2 text-md"
                   >
                     About
                   </Link>
@@ -98,7 +98,7 @@ const Navbar = () => {
                 >
                   <span class="sr-only">View notifications</span>
                   <svg
-                    class="h-8 w-8"
+                    class="h-6 w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
@@ -129,7 +129,7 @@ const Navbar = () => {
                         src={person}
                         alt=""
                       /> */}
-                      <IoPersonOutline className="w-8 h-8 stroke-8 hover:text-orange-600" />
+                      <IoPersonOutline className="w-6 h-6 stroke-12 hover:text-orange-600" />
                     </button>
                   </div>
 
@@ -281,32 +281,32 @@ const Navbar = () => {
           <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             <Link
               to="/"
-              class="text-black font-semibold  hover:text-orange-600  block rounded-md px-3 py-2 text-xl"
+              class="text-black hover:text-orange-600  block rounded-md px-3 py-2 text-md"
               aria-current="page"
             >
               Home
             </Link>
             <Link
               to="/products"
-              class="text-black font-semibold  hover:text-orange-600  block rounded-md px-3 py-2 text-xl"
+              class="text-black hover:text-orange-600  block rounded-md px-3 py-2 text-md"
             >
               Products
             </Link>
             <Link
               to="/blog"
-              class="text-black font-semibold  hover:text-orange-600  block rounded-md px-3 py-2 text-xl"
+              class="text-black hover:text-orange-600  block rounded-md px-3 py-2 text-md"
             >
               Blogs
             </Link>
             <Link
               to="/offer"
-              class="text-black font-semibold  hover:text-orange-600  block rounded-md px-3 py-2 text-xl"
+              class="text-black hover:text-orange-600  block rounded-md px-3 py-2 text-md"
             >
               Offers
             </Link>
             <Link
               to="/about"
-              class="text-black font-semibold  hover:text-orange-600  block rounded-md px-3 py-2 text-xl"
+              class="text-black hover:text-orange-600  block rounded-md px-3 py-2 text-md"
             >
               About
             </Link>
@@ -338,7 +338,7 @@ const Navbar = () => {
               <div class="mt-3 space-y-1 px-2">
                 <Link
                   to="/profile"
-                  class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-orange-600 "
+                  class="block rounded-md px-3 py-2 text-md text-black-400  hover:text-orange-600 "
                 >
                   <span class="flex items-center font-semibold justify-center text-black ">
                     <IoPersonOutline class="mr-2" /> Your Profile
@@ -346,7 +346,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="/wallet"
-                  class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-orange-600 "
+                  class="block rounded-md px-3 py-2 text-md text-black-400  hover:text-orange-600 "
                 >
                   <span class="flex items-center font-semibold justify-center text-black ">
                     <IoWalletOutline class="mr-2" />Wallet
@@ -354,7 +354,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="/admin"
-                  class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-orange-600 "
+                  class="block rounded-md px-3 py-2 text-md text-black-400  hover:text-orange-600 "
                 >
                   <span class="flex items-center font-semibold justify-center text-black ">
                     <RiAdminFill class="mr-2" /> Admin
@@ -363,7 +363,7 @@ const Navbar = () => {
                 <Link
                   to="/"
                   onClick={handleLogout}
-                  class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-orange-600 "
+                  class="block rounded-md px-3 py-2 text-md text-black-400  hover:text-orange-600 "
                 >
                   <span class="flex items-center font-semibold justify-center text-black ">
                     <IoMdLogIn class="mr-2" /> Log out
@@ -374,7 +374,7 @@ const Navbar = () => {
               <div class="mt-3 space-y-1 px-2">
                 <Link
                   to="/admin"
-                  class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-orange-600 "
+                  class="block rounded-md px-3 py-2 text-md text-black-400  hover:text-orange-600 "
                 >
                   <span class="flex items-center justify-center text-black ">
                     <RiAdminFill class="mr-2" /> Admin
@@ -382,7 +382,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="/login"
-                  class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-orange-600 "
+                  class="block rounded-md px-3 py-2 text-md text-black-400  hover:text-orange-600 "
                 >
                   <span class="flex items-center justify-center text-black ">
                     <IoMdLogIn class="mr-2" /> Log in
