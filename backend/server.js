@@ -3,6 +3,8 @@ const {connectedDB}=require("./config/db")
 const cors=require("cors")
 const{userRouter}=require("./router/userRouter")
 const{productRouter}=require("./router/productRouter")
+const {authMiddleware}=require("./middleware/authenticate")
+const { queryRouter } = require("./router/queryRouter")
 
 const app=express()
 require("dotenv").config()
@@ -10,7 +12,7 @@ require("dotenv").config()
 app.use(cors())
  
 app.use(express.json())
-
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/",async(req,res)=>{
     try{
@@ -23,6 +25,8 @@ app.get("/",async(req,res)=>{
 
 app.use("/user",userRouter)
 app.use("/product",productRouter)
+app.use(authMiddleware)
+app.use("/query",queryRouter)
 
 
 /* listen the server code present here */
