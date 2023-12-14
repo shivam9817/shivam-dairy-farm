@@ -1,11 +1,12 @@
 const express = require("express");
 const { checkRole } = require("../middleware/authorise")
 const { ProductModel } = require("../model/productModel");
+const{authMiddleware}=require("../middleware/authenticate")
 const jwt = require("jsonwebtoken")
 const productRouter = express.Router();
 
 /* ================================= This route is used for getting data using searching sort category =============================== */
-productRouter.get("/", async (req, res) => {
+productRouter.get("/",async (req, res) => {
   const category = req.query.category;
   const name = req.query.name;
   const sortData = req.query.sort;
@@ -41,7 +42,7 @@ productRouter.get("/", async (req, res) => {
   }
 });
 
-productRouter.get("/:id", async (req, res) => {
+productRouter.get("/:id",checkRole('read','write'),async (req, res) => {
   const productId = req.params.id;
   try {
     const product = await ProductModel.findById(productId);
@@ -59,7 +60,7 @@ productRouter.get("/:id", async (req, res) => {
   }
 });
 /* ============================== This Route is used for Searching ==================================== */
-productRouter.post("/search", async (req, res) => {
+productRouter.post("/search",checkRole('read','write'), async (req, res) => {
   try {
     let searchText = new RegExp(`${req.body.text}`, 'i');
     const products = await ProductModel.find({
@@ -78,9 +79,8 @@ productRouter.post("/search", async (req, res) => {
 
 
 /* =========================== This route for Adding the data to the database ====================================== */
-
-
-productRouter.post("/create", async (req, res) => {
+productRouter.use(authMiddleware)
+productRouter.post("/create",checkRole('write'), async (req, res) => {
   const payload = req.body;
   const token = req.headers.authorization;
   const decodedToken = jwt.verify(token, process.env.secretkey);
