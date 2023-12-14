@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Flex, Avatar, HStack, Link, IconButton, Menu, MenuButton, MenuList, MenuItem, MenuDivider, useDisclosure, useColorModeValue, Image, useToast } from '@chakra-ui/react';
-import { CloseButton, VStack, Icon, Drawer, DrawerContent, Text } from '@chakra-ui/react';
-import { FiHome, FiCompass, FiMenu, FiBell, FiChevronDown, FiUsers, FiPlus, FiShoppingCart, FiActivity } from 'react-icons/fi';
+import { VStack, Icon, Drawer, DrawerContent, Text } from '@chakra-ui/react';
+import { FiHome, FiCompass, FiMenu, FiBell, FiChevronDown, FiPlus } from 'react-icons/fi';
 import logoAlicia from "../asset/logo.jpg"
 import person from "../asset/person.png"
 import { useNavigate } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import ProductPage from './ProductPage';
 import AddProducts from './AddProduct';
+import { IoClose } from 'react-icons/io5';
 
 const LinkItems = [
     { name: 'Dashboard', compName: 'Dashboard', heading: 'Dashboard', icon: FiHome },
@@ -45,10 +46,22 @@ function SidebarWithHeader({ children }) {
     const SidebarContent = ({ onClose, ...rest }) => {
         return (
             <Box transition="3s ease" bg={useColorModeValue('blue.900', 'gray.900')} borderRight="1px"
-                borderRightColor={useColorModeValue('gray.200', 'gray.700')} w={{ base: 'full', md: 60 }} pos="fixed" h="full" {...rest}>
-                <Flex h="20" alignItems={"center"} justifyContent="center" mb={10} mt={6}>
-                    <Image w={200} src={logoAlicia} h={28} />
-                </Flex>
+                borderRightColor={useColorModeValue('gray.200', 'gray.700')} w={{ base: 'full', md: 60 }} pos="fixed" h={"full"} {...rest}>
+                <IconButton
+                    size="lg"
+                    variant="ghost"
+                    aria-label="close menu"
+                    icon={<IoClose />}
+                    color={'white'}
+                    _hover={{
+                        bg: 'white',
+                        color: 'black',
+                    }}
+                    onClick={onClose}
+                />
+                <Box h="20" alignItems={"center"} justifyContent="center" margin={"auto"} mb={10} mt={6}>
+                    <Image margin={"auto"} src={logoAlicia} h={28} ml={"20px"} />
+                </Box>
                 {LinkItems.map((link) => (
                     <NavItem onClick={() => setComp(link.compName)} key={link.name} icon={link.icon} color={"white"}>{link.name}</NavItem>
                 ))}
@@ -64,8 +77,8 @@ function SidebarWithHeader({ children }) {
                     <DrawerContent><SidebarContent onClose={onClose} /></DrawerContent>
                 </Drawer>
                 {/* mobilenav */}
-                <MobileNav admin={admin} handleLogout={handleLogout} onOpen={onOpen} />
-                <Flex className='main-content' justifyContent={'center'} ml='100'>
+                <MobileNav admin={admin} handleLogout={handleLogout} onOpen={onOpen} onClose={onClose} />
+                <Flex className='main-content' justifyContent={'center'} ml={{ md: '100' }}>
                     {componentChange()}
                 </Flex>
                 <Box ml={{ base: 0, md: 60 }} p="4">{children}</Box>
@@ -101,7 +114,7 @@ const MobileNav = ({ admin, handleLogout, onOpen, ...rest }) => {
     const toast = useToast();
     return (
         <Flex
-            ml={{ base: 0, md: 60 }}
+            ml={{ base: 0, md: 10 }}
             px={{ base: 4, md: 4 }}
             height="20"
             alignItems="center"
@@ -115,6 +128,12 @@ const MobileNav = ({ admin, handleLogout, onOpen, ...rest }) => {
                 onClick={onOpen}
                 variant="outline"
                 aria-label="open menu"
+                color={'white'}
+                _hover={{
+                    bg: 'white',
+                    color: 'black',
+                    border: "2px solid black"
+                }}
                 icon={<FiMenu />}
             />
             <HStack spacing={{ base: '0', md: '6' }}>

@@ -50,7 +50,7 @@ const ProductPage = () => {
   };
 
   return (
-    <Box bg={"gray.300"} pl={40} pr={10} w={"100%"} h={"full"} pb={20}>
+    <Box pl={{base:10, md:40}} pr={10} w={"100%"} h={"full"} pb={20}>
       <Heading size={'lg'} color={"gray.900"} mt={"20px"} mb={"20px"} >Manage Products</Heading>
 
       {isLoading ? (
@@ -64,7 +64,7 @@ const ProductPage = () => {
         <h2>Error Occurred while getting product list</h2>
       ) : (
         
-        <Grid templateColumns='repeat(3, 1fr)' gap={10}>
+        <Grid templateColumns={{base:'repeat(1, 1fr)', md:'repeat(2, 1fr)', lg:'repeat(3, 1fr)'}} gap={10} overflow={"hidden"}>
               {data?.map(product => (
                 <ProductDetail
                   key={product._id}

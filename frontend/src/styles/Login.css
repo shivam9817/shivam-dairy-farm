@@ -1,0 +1,154 @@
+#signup.signup {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    box-sizing: border-box;
+  }
+  
+  #signup.signup .signup-mid {
+    display: none;
+    background-color: rgb(0, 95, 50);
+  }
+  
+  #signup.signup .signup-left {
+    background: rgb(130, 200, 210);
+    padding: 60px 64px 36px;
+    display: grid;
+    gap: 20px;
+    overflow: hidden;
+  }
+  
+  #signup.signup .signup-left .heading h2 {
+    font-size: 50px;
+    padding: 50px 0;
+    letter-spacing: 3px;
+    font-weight: 600;
+  }
+  
+  #signup.signup .signup-left .bottom-rocket img {
+    height: 350px;
+    object-fit: contain;
+  }
+  
+  #signup.signup .signup-right .signup-form {
+    display: grid;
+    position: relative;
+    padding: 40px 20px;
+  }
+  
+  #signup.signup .signup-right .signup-form .firstline {
+    margin-top: 20px;
+    padding: 30px;
+    font-weight: 400;
+  }
+  
+  #signup.signup .signup-right .signup-form .form {
+    margin-top: 20px;
+    height: 90%;
+    overflow-y: scroll;
+    border-bottom: 1px solid;
+  }
+  
+  #signup.signup .signup-right .signup-form .form form {
+    display: grid;
+    gap: 10px;
+  }
+  
+  #signup.signup .signup-right .signup-form .form .top {
+    display: grid;
+    gap: 20px;
+    padding: 10px 50px;
+    margin-top: 20px;
+  }
+  
+  #signup.signup .signup-right .signup-form .form .top .signup-para {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  #signup.signup .signup-right .signup-form .form .top .signup-child {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  
+  #signup.signup .signup-right .signup-form .form input {
+    padding: 20px 12px;
+    width: 100%;
+    background-color: rgb(248, 248, 248);
+    border: none;
+  }
+  
+  #signup.signup .signup-right .signup-form .form .continue-btn-div {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-top: 20px;
+  }
+  
+  #signup.signup .signup-right .signup-form .form .continue-btn-div .continue-btn {
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+  }
+  
+  @media screen and (max-width: 600px) {
+    #signup.signup {
+        grid-template-columns: 100%;
+    }
+  
+    #signup.signup .signup-left {
+        display: none;
+    }
+  
+    #signup.signup .signup-mid {
+        display: block;
+        color: rgb(195, 245, 60);
+        padding: 0 20px;
+        gap: 10px;
+    }
+  
+    #signup.signup .signup-mid img {
+        width: 80%;
+        padding-left: 10px;
+    }
+  
+    #signup.signup .signup-mid .mid-para p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+  
+    #signup.signup .signup-right .signup-form .firstline {
+        padding: 0 5px;
+        font-weight: 400;
+        font-size: 14px;
+    }
+  
+    #signup.signup .signup-right .signup-form .form {
+        height: 100%;
+        border-bottom: none;
+    }
+  
+    #signup.signup .signup-right .signup-form .form form .top {
+        padding: 10px;
+    }
+  
+    #signup.signup .signup-right .signup-form .form .top .signup-child {
+        grid-template-columns: 100%;
+    }
+  
+    #signup.signup .signup-right .signup-form .form .top .signup-para {
+        display: none;
+    }
+  
+    #signup.signup .signup-right .signup-form .continue-btn-div {
+        position: static !important;
+        margin-top: 5px;
+    }
+  
+    #signup.signup .signup-right .signup-form .continue-btn-div .continue-btn {
+        width: 100%;
+    }
+  }
+  

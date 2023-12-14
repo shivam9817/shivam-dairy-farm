@@ -53,38 +53,37 @@ const Navbar = () => {
               <div
                 class="flex-shrink-0 hover:cursor-pointer"
               >
-                <img class="h-18 w-44 mx-2 px-2 mt-3"  src={logo} alt="Your Company" />
+                <img class="h-18 w-44 mx-2 px-2 mt-3" src={logo} alt="Your Company" />
               </div>
               <div class="hidden md:block text-right">
                 <div class="mr-4 ml-24 space-x-4">
                   <Link
                     to="/"
-                    class="text-black font-semibold  hover:text-green-600  px-3 py-2 text-xl"
+                    class="text-black font-semibold  hover:text-orange-600  px-3 py-2 text-xl"
                     aria-current="page"
                   >
                     Home
                   </Link>
                   <Link
                     to="/products"
-                    class="text-black font-semibold  hover:text-green-600  rounded-md px-3 py-2 text-xl"
+                    class="text-black font-semibold  hover:text-orange-600  rounded-md px-3 py-2 text-xl"
                   >
                     Products
                   </Link>
                   <Link
                     to="/blog"
-                    class="text-black font-semibold  hover:text-green-600  rounded-md px-3 py-2 text-xl"
+                    class="text-black font-semibold  hover:text-orange-600  rounded-md px-3 py-2 text-xl"
                   >
                     Blogs
                   </Link>
-                  <Link
-                    to="/offer"
-                    class="text-black font-semibold  hover:text-green-600  rounded-md px-3 py-2 text-xl"
-                  >
+                  <Link 
+                  to="/offer" 
+                  className="text-black font-semibold hover:text-orange-600 hover:glow rounded-md px-3 py-2 text-xl">
                     Offers
                   </Link>
                   <Link
                     to="/about"
-                    class="text-black font-semibold  hover:text-green-600  rounded-md px-3 py-2 text-xl"
+                    class="text-black font-semibold  hover:text-orange-600  rounded-md px-3 py-2 text-xl"
                   >
                     About
                   </Link>
@@ -95,7 +94,7 @@ const Navbar = () => {
               <div class="ml-4 flex items-center md:ml-6">
                 <button
                   type="button"
-                  class="rounded-full p-1 text-black  focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black hover:text-green-600"
+                  class="rounded-full p-1 text-black  focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black hover:text-orange-600"
                 >
                   <span class="sr-only">View notifications</span>
                   <svg
@@ -130,7 +129,7 @@ const Navbar = () => {
                         src={person}
                         alt=""
                       /> */}
-                      <IoPersonOutline className="w-8 h-8 stroke-8 hover:text-green-600"/>
+                      <IoPersonOutline className="w-8 h-8 stroke-8 hover:text-orange-600" />
                     </button>
                   </div>
 
@@ -282,32 +281,32 @@ const Navbar = () => {
           <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             <Link
               to="/"
-              class="text-black font-semibold  hover:text-green-600  block rounded-md px-3 py-2 text-xl"
+              class="text-black font-semibold  hover:text-orange-600  block rounded-md px-3 py-2 text-xl"
               aria-current="page"
             >
               Home
             </Link>
             <Link
               to="/products"
-              class="text-black font-semibold  hover:text-green-600  block rounded-md px-3 py-2 text-xl"
+              class="text-black font-semibold  hover:text-orange-600  block rounded-md px-3 py-2 text-xl"
             >
               Products
             </Link>
             <Link
               to="/blog"
-              class="text-black font-semibold  hover:text-green-600  block rounded-md px-3 py-2 text-xl"
+              class="text-black font-semibold  hover:text-orange-600  block rounded-md px-3 py-2 text-xl"
             >
               Blogs
             </Link>
             <Link
               to="/offer"
-              class="text-black font-semibold  hover:text-green-600  block rounded-md px-3 py-2 text-xl"
+              class="text-black font-semibold  hover:text-orange-600  block rounded-md px-3 py-2 text-xl"
             >
               Offers
             </Link>
             <Link
               to="/about"
-              class="text-black font-semibold  hover:text-green-600  block rounded-md px-3 py-2 text-xl"
+              class="text-black font-semibold  hover:text-orange-600  block rounded-md px-3 py-2 text-xl"
             >
               About
             </Link>
@@ -335,61 +334,61 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
-            {isLoggedIn? (
-            <div class="mt-3 space-y-1 px-2">
-              <Link
-                to="/profile"
-                class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-green-600 "
-              >
-                <span class="flex items-center font-semibold justify-center text-black ">
-                  <IoPersonOutline class="mr-2" /> Your Profile
-                </span>
-              </Link>
-              <Link
-                to="/wallet"
-                class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-green-600 "
-              >
-                <span class="flex items-center font-semibold justify-center text-black ">
-                  <IoWalletOutline class="mr-2" />Wallet
-                </span>
-              </Link>
-              <Link
-                to="/admin"
-                class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-green-600 "
-              >
-                <span class="flex items-center font-semibold justify-center text-black ">
-                  <RiAdminFill class="mr-2" /> Admin
-                </span>
-              </Link>
-              <Link
-                to="/"
-                onClick={handleLogout}
-                class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-green-600 "
-              >
-                <span class="flex items-center font-semibold justify-center text-black ">
-                <IoMdLogIn class="mr-2" /> Log out
-                </span>
-              </Link>
-            </div>
-            ):(
+            {isLoggedIn ? (
               <div class="mt-3 space-y-1 px-2">
-              <Link
-                to="/admin"
-                class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-green-600 "
-              >
-                <span class="flex items-center justify-center text-black ">
-                  <RiAdminFill class="mr-2" /> Admin
-                </span>
-              </Link>
-              <Link
-                to="/login"
-                class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-green-600 "
-              >
-                <span class="flex items-center justify-center text-black ">
-                  <IoMdLogIn class="mr-2" /> Log in
-                </span>
-              </Link>
-            </div>
+                <Link
+                  to="/profile"
+                  class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-orange-600 "
+                >
+                  <span class="flex items-center font-semibold justify-center text-black ">
+                    <IoPersonOutline class="mr-2" /> Your Profile
+                  </span>
+                </Link>
+                <Link
+                  to="/wallet"
+                  class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-orange-600 "
+                >
+                  <span class="flex items-center font-semibold justify-center text-black ">
+                    <IoWalletOutline class="mr-2" />Wallet
+                  </span>
+                </Link>
+                <Link
+                  to="/admin"
+                  class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-orange-600 "
+                >
+                  <span class="flex items-center font-semibold justify-center text-black ">
+                    <RiAdminFill class="mr-2" /> Admin
+                  </span>
+                </Link>
+                <Link
+                  to="/"
+                  onClick={handleLogout}
+                  class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-orange-600 "
+                >
+                  <span class="flex items-center font-semibold justify-center text-black ">
+                    <IoMdLogIn class="mr-2" /> Log out
+                  </span>
+                </Link>
+              </div>
+            ) : (
+              <div class="mt-3 space-y-1 px-2">
+                <Link
+                  to="/admin"
+                  class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-orange-600 "
+                >
+                  <span class="flex items-center justify-center text-black ">
+                    <RiAdminFill class="mr-2" /> Admin
+                  </span>
+                </Link>
+                <Link
+                  to="/login"
+                  class="block rounded-md px-3 py-2 text-xl text-black-400  hover:text-orange-600 "
+                >
+                  <span class="flex items-center justify-center text-black ">
+                    <IoMdLogIn class="mr-2" /> Log in
+                  </span>
+                </Link>
+              </div>
             )}
           </div>
         </div>

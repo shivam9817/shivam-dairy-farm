@@ -15,7 +15,8 @@ import {
   ModalContent,
   useDisclosure,
   useToast,
-  Box
+  Box,
+  Flex
 } from '@chakra-ui/react';
 import axios from 'axios';
 import React, { useState } from 'react';
@@ -29,7 +30,7 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
   const [editedProduct, setEditedProduct] = useState({ ...product });
 
   const handleEditClick = () => {
-    console.log('Product:', product);
+    console.log('Product:-', product);
     setEditable(true);
     setEditedProduct({ ...product });
     editDisclosure.onOpen();
@@ -47,12 +48,12 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
         return;
       }
       const response = await axios.patch(
-        `http://localhost:8080/product/update/${editedProduct._id}`,
+        `http:-//localhost:-8080/product/update/${editedProduct._id}`,
         editedProduct,
         {
-          headers: {
-            'Content-Type': 'application/json',
-            authorization: `${localStorage.getItem('access_token')}`,
+          headers:- {
+            'Content-Type':- 'application/json',
+            authorization:- `${localStorage.getItem('access_token')}`,
           },
         }
       );
@@ -62,17 +63,17 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
         setEditable(false);
         editDisclosure.onClose();
         toast({
-          title: 'Product Updated',
-          description: 'Product updated successfully!',
-          status: 'success',
-          duration: 3000,
-          isClosable: true,
+          title:- 'Product Updated',
+          description:- 'Product updated successfully!',
+          status:- 'success',
+          duration:- 3000,
+          isClosable:- true,
         });
       } else {
-        console.error('Failed to update product:', response.data);
+        console.error('Failed to update product:-', response.data);
       }
     } catch (error) {
-      console.error('Error updating product:', error);
+      console.error('Error updating product:-', error);
     }
   };
 
@@ -80,7 +81,7 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
     e.preventDefault();
     setEditedProduct({
       ...editedProduct,
-      [e.target.name]: e.target.value,
+      [e.target.name]:- e.target.value,
     });
   };
 
@@ -91,11 +92,11 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
   const handleConfirmDelete = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:8080/product/delete/${product._id}`,
+        `http:-//localhost:-8080/product/delete/${product._id}`,
         {
-          headers: {
-            'Content-Type': 'application/json',
-            authorization: `${localStorage.getItem('access_token')}`,
+          headers:- {
+            'Content-Type':- 'application/json',
+            authorization:- `${localStorage.getItem('access_token')}`,
           },
         }
       );
@@ -104,17 +105,17 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
         handleDelete(product._id);
         deleteDisclosure.onClose();
         toast({
-          title: 'Product Deleted',
-          description: 'Product deleted successfully!',
-          status: 'success',
-          duration: 3000,
-          isClosable: true,
+          title:- 'Product Deleted',
+          description:- 'Product deleted successfully!',
+          status:- 'success',
+          duration:- 3000,
+          isClosable:- true,
         });
       } else {
-        console.error('Failed to delete product:', response.data);
+        console.error('Failed to delete product:-', response.data);
       }
     } catch (error) {
-      console.error('Error deleting product:', error);
+      console.error('Error deleting product:-', error);
     }
   };
 
@@ -127,28 +128,31 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
         borderRadius='md'
         borderWidth='1px'
         overflow='hidden'
-        position='relative'
         textAlign={"left"}
+        backgroundColor={"gray.700"}
+        color={"white"}
       >
-        <Image src={product.image} alt={product.desc} boxSize='250px' objectFit='cover' margin={"auto"} />
-        <Heading fontSize='lg' mt={2}>
-          Name: {product.name}
+        <Flex>
+        <Image src={product.image} alt={product.desc} w="50%" objectFit='cover' margin={"auto"} />
+        <Box p={4} w={"50%"}>
+        <Heading fontSize='lg' mt={2} mb={4}>
+          Name:- {product.name}
         </Heading>
         <Box mt={2}>
-          <span style={{fontWeight:"bold"}}>Category:</span> {product.categories}
+          <span style={{fontWeight:"bold"}}>Category:-</span> {product.categories}
         </Box>
         <Box mt={2}>
-          <span style={{fontWeight:"bold"}}>Price:</span> ₹{product.price}
-          <span style={{fontWeight:"bold",marginLeft:"10px"}}>Offer Price:</span> ₹{product.o_price}
+          <span style={{fontWeight:"bold"}}>Price:-</span> ₹{product.price}
+          </Box>
+        <Box mt={2}>
+          <span style={{fontWeight:"bold"}}>Offer Price:-</span> ₹{product.o_price}
        </Box>
-        {/* <Box mt={2}>
-          <span style={{fontWeight:"bold"}}>Offer Price:</span> ₹{product.o_price}
-        </Box> */}
         <Box mt={2} fontSize='md'>
-          <span style={{fontWeight:"bold"}}>Quantity:</span> {product.stock_quantity}
+          <span style={{fontWeight:"bold"}}>Quantity:-</span> {product.stock_quantity}
         </Box>
+        </Box></Flex>
         <Box mt={2} fontSize='md'>
-         <span style={{fontWeight:"bold"}}>Description:</span>  {product.description}
+         <span style={{fontWeight:"bold"}}>Description:-</span>  {product.description}
         </Box>
         <Box>
      

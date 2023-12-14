@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
-import Login from "../pages/Login";
 import Blogs from "../pages/Blogs";
 import SidebarWithHeader from "../Admin/Sidebar";
 import Products from "../pages/Products";
@@ -9,12 +8,16 @@ import PageNotFound from "../pages/PageNotFound";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import DetailedProductPage from "../pages/DetailedProductPage";
+import SignUpForm from "../components/Signup";
+import SignInForm from "../components/Signin";
+import Address from "../components/Address";
 
 export default function AllRoutes() {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<SignInForm />} />
+            <Route path="/signup" element={<SignUpForm/>} />
             <Route path="/products" element={<Products/>} />
             <Route path="/blog" element={<PrivateRoute><Blogs /></PrivateRoute>} />
             <Route path="/about" element={<About />} />
@@ -22,6 +25,7 @@ export default function AllRoutes() {
             path="/admin" 
             element={<AdminRoute><SidebarWithHeader/></AdminRoute>} 
             />
+            <Route path="/address" element={<PrivateRoute><Address/></PrivateRoute>}/>
             <Route path="/productDetail/:id" element={<DetailedProductPage/>}/>
             <Route path="*" element={<PageNotFound />} />
         </Routes>

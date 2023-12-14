@@ -7,6 +7,7 @@ function Dashboard() {
   return (
     <>
         <ProductPage/>
+        
     </>
   );
 }

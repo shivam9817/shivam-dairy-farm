@@ -98,7 +98,7 @@ const AddProducts = () => {
 
 
   return (
-    <Box bg={"gray.300"} pl={80} pr={80} w={"100%"} >
+    <Box bg={"gray.300"} pl={{md:"22%", base:"2%"}} pr={"2%"} overflow={"hidden"} w={"100%"} >
       <Heading size='md' color={"gray.900"} >Add New Product</Heading>
       <Box  >
         <form onSubmit={formSubmitHandler}>

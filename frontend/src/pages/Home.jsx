@@ -134,9 +134,9 @@ const Home = () => {
           </div>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style={{marginBottom:"-10px"}}>
-          <path fill="#DBEAFE" fillOpacity="1" d="M0,288L60,256C120,224,240,160,360,122.7C480,85,600,75,720,90.7C840,107,960,149,1080,149.3C1200,149,1320,107,1380,85.3L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+          <path fill="#FFEDD5" fillOpacity="1" d="M0,288L60,256C120,224,240,160,360,122.7C480,85,600,75,720,90.7C840,107,960,149,1080,149.3C1200,149,1320,107,1380,85.3L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
         </svg>
-        <div style={{ backgroundColor: "#DBEAFE" }} className="md:flex justify-between">
+        <div className="md:flex justify-between bg-orange-100">
           <div className=" md:w-1/2 mx-auto ">
             <h1 className="text-4xl font-bold text-black">About Us</h1>
             <p className="md:ml-16 md:mr-16 text-lg p-4 mx-auto text-black">At Alicia Farm, we are proud to be a family-owned and operated dairy farm dedicated to delivering the freshest and highest quality dairy products to our community. With a heritage rooted in generations of farming, we have embraced modern practices to ensure that every product that reaches your table
@@ -149,7 +149,7 @@ const Home = () => {
         </div>
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path fill="#DBEAFE" fillOpacity="1" d="M0,160L80,138.7C160,117,320,75,480,96C640,117,800,203,960,245.3C1120,288,1280,288,1360,288L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+          <path fill="#FFEDD5" fillOpacity="1" d="M0,160L80,138.7C160,117,320,75,480,96C640,117,800,203,960,245.3C1120,288,1280,288,1360,288L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
         </svg>
         <div className="w-100 mb-40">
           <h1 className="text-black font-bold text-3xl mt-4 mb-4">More Products</h1>
@@ -159,7 +159,7 @@ const Home = () => {
             <img src={pic3} alt="" className="md:w-1/4 w-3/4 mx-auto h-92 mx-3 mt-2 rounded-2xl" />
           </div>
         </div>
-        <div className="mx-auto bg-blue-100 mt-20 p-10 w-4/5 mx-auto border border-gray-300 shadow-md rounded-3xl">
+        <div className="mx-auto bg-orange-100 mt-20 p-10 w-4/5 mx-auto border border-gray-300 shadow-md ">
           <h1 className="text-3xl font-bold text-black">Contact Us</h1>
       <form onSubmit={handleSubmit} className="md:p-6">
        <div className="md:flex justify-between"> 
@@ -174,7 +174,7 @@ const Home = () => {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-blue-800 rounded-3xl"
+          className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-orange-800 "
         />
             <label htmlFor="name" className="block text-black text-xl text-left font-semibold mt-2">
           Number:
@@ -186,7 +186,7 @@ const Home = () => {
           value={formData.number}
           onChange={handleChange}
           required
-          className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-blue-800 rounded-3xl"
+          className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-orange-800 "
         />
 
         <label htmlFor="email" className="block text-black text-xl text-left font-semibold mt-2">
@@ -199,7 +199,7 @@ const Home = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-blue-800 rounded-3xl"
+          className="w-full px-3 py-2 border-gray-300 focus:outline-none focus:border-orange-800 "
         /></div>
 <div className="md:w-1/2 mx-6">
         <label htmlFor="message" className="block text-black text-xl text-left font-semibold mt-4">
@@ -211,13 +211,13 @@ const Home = () => {
           value={formData.message}
           onChange={handleChange}
           required
-          className="w-full h-40 px-3 py-2 border border-gray-300 focus:outline-none focus:border-blue-800 rounded-3xl"
+          className="w-full h-40 px-3 py-2 border border-gray-300 focus:outline-none focus:border-orange-800 "
         ></textarea></div>
         </div>
 
         <button
           type="submit"
-          className="md:w-1/6 mt-6 bg-blue-900 text-lg text-white font-bold py-2 px-4 rounded-3xl hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+          className="md:w-1/6 mt-6 bg-orange-600 text-lg text-white font-bold py-2 px-4  hover:bg-orange-700 focus:outline-none focus:shadow-outline-orange active:bg-orange-800"
         >
           Send Message
         </button>
