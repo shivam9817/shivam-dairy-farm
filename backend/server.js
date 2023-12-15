@@ -5,6 +5,7 @@ const{userRouter}=require("./router/userRouter")
 const{productRouter}=require("./router/productRouter")
 const {authMiddleware}=require("./middleware/authenticate")
 const { queryRouter } = require("./router/queryRouter")
+const {shippmentRouter}=require("./router/shippmentRouter")
 
 const app=express()
 require("dotenv").config()
@@ -25,8 +26,11 @@ app.get("/",async(req,res)=>{
 
 app.use("/user",userRouter)
 app.use("/product",productRouter)
-app.use(authMiddleware)
+
 app.use("/query",queryRouter)
+
+app.use(authMiddleware)
+app.use("/shippment",shippmentRouter)
 
 
 /* listen the server code present here */

@@ -94,3 +94,5 @@
 [2023-12-14T11:02:08.196Z] [INFO] [::1] User logged in: john123@gmail.com
 [2023-12-14T14:34:03.838Z] [INFO] [::1] User logged in: john123@gmail.com
 [2023-12-14T14:38:30.389Z] [INFO] [::1] User logged in: john123@gmail.com
+[2023-12-15T07:11:12.813Z] [INFO] [::ffff:127.0.0.1] User registered: s@gmail.com
+[2023-12-15T07:11:20.831Z] [INFO] [::ffff:127.0.0.1] User logged in: s@gmail.com
