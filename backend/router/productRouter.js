@@ -42,7 +42,7 @@ productRouter.get("/",async (req, res) => {
   }
 });
 
-productRouter.get("/:id",checkRole('read','write'),async (req, res) => {
+productRouter.get("/:id",async (req, res) => {
   const productId = req.params.id;
   try {
     const product = await ProductModel.findById(productId);
