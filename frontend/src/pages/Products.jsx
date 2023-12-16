@@ -38,10 +38,13 @@ export default function Products() {
     return (
         <>
             <Navbar />
-            <Box className="mt-28 w-full pt-1" boxShadow="rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em" >
-                <Text fontSize="4xl" fontWeight="500" margin="2%" mb="5%" color="#0f5a20">
-                    Product Page
+           
+            <Box className="mt-24 w-full pt-1" >
+                <hr />
+                 <Text fontSize="3xl" fontWeight="500" margin="2%" mb="1%" color="#0f5a20">
+                    Products
                 </Text>
+                {/* <hr /> */}
 
                 {isLoading ? (
                     <CircularProgress
@@ -53,7 +56,7 @@ export default function Products() {
                 ) : isError ? (
                     <h2>Error Occurred while getting product list</h2>
                 ) : (
-                    <Box w={{ base: "100%", md: "80%" }} margin="auto" paddingBottom="8%">
+                    <Box w={{ base: "100%", md: "80%" }} margin="auto" mt={"2%"} paddingBottom="8%">
                         <Grid
                             templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }}
                             gap={{ base: 5, md: 8, lg: 10 }}
@@ -70,6 +73,7 @@ export default function Products() {
                                     margin={{base: "auto"}}
                                     width={{base:"280px"}}
                                     overflow={"hidden"}
+                                    rounded={"none"}
                                     boxShadow="rgba(183, 181, 180, 0.56) 0px 22px 70px 4px"
                                     initial={{ opacity: 0, y: 20, rotateY: 180 }}
                                     animate={{ opacity: 1, y: 0, rotateY: 360 }}

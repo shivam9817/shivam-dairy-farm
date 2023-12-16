@@ -20,8 +20,8 @@ import axios from "axios";
 import { IoIosMail } from "react-icons/io";
 import { FaLock, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 import image from "../asset/signinImg.jpg"
 
 function SignUpForm() {
@@ -75,10 +75,10 @@ function SignUpForm() {
       bg="gray.50"
       width={"80%"}
       margin={"auto"}
-      mt={"6%"}
+      mt={"5%"}
       padding={4}
     >
-      <Flex flex="1" py={8} flexDirection={["column", "column", "row", "row"]}>
+     <Flex flex="1" py={{base:8,md:4}} flexDirection={["column", "column", "row", "row"]}>
       {["base", "sm"].includes(useBreakpointValue({ base: "base", sm: "sm", md: "md" })) ? null : (
     <Flex justify="center" mb={8} margin={"auto"} >
           <Image
@@ -87,11 +87,11 @@ function SignUpForm() {
             maxWidth={"100%"}
             maxHeight={"600px"}
             objectFit={"cover"}
-            mt={"8%"}
+            mt={"-4%"}
           />
         </Flex>
   )}
-        <Box mx="auto" maxW="100%" padding={"10px"} mt={"5%"}>
+        <Box mx="auto" maxW="100%" padding={"10px"} mt={{base:"5%",md:"0"}}>
           <Heading as="h4" size="md" textAlign="center" mb={4}>
             Sign Up To AliciaFarm
           </Heading>
