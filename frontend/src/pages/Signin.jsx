@@ -18,8 +18,8 @@ import { FaLock } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import image from "../asset/signinImg.jpg"
 
 function SignInForm() {
@@ -79,10 +79,10 @@ function SignInForm() {
       bg="gray.50"
       width={"80%"}
       margin={"auto"}
-      mt={"6%"}
+      mt={"5%"}
       padding={4}
     >
-      <Flex flex="1" py={8} flexDirection={["column", "column", "row", "row"]}>
+      <Flex flex="1" py={{base:8,md:4}} flexDirection={["column", "column", "row", "row"]}>
       {["base", "sm"].includes(useBreakpointValue({ base: "base", sm: "sm", md: "md" })) ? null : (
     <Flex justify="center" mb={8} margin={"auto"} >
           <Image
@@ -91,7 +91,7 @@ function SignInForm() {
             maxWidth={"100%"}
             maxHeight={"600px"}
             objectFit={"cover"}
-            mt={"8%"}
+            mt={"-4%"}
           />
         </Flex>
   )}

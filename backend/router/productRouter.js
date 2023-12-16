@@ -60,7 +60,7 @@ productRouter.get("/:id",async (req, res) => {
   }
 });
 /* ============================== This Route is used for Searching ==================================== */
-productRouter.post("/search",checkRole('read','write'), async (req, res) => {
+productRouter.post("/search", async (req, res) => {
   try {
     let searchText = new RegExp(`${req.body.text}`, 'i');
     const products = await ProductModel.find({

@@ -8,9 +8,9 @@ import PageNotFound from "../pages/PageNotFound";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import DetailedProductPage from "../pages/DetailedProductPage";
-import SignUpForm from "../components/Signup";
-import SignInForm from "../components/Signin";
 import Address from "../components/Address";
+import SignInForm from "../pages/Signin";
+import SignUpForm from "../pages/Signup";
 
 export default function AllRoutes() {
     return (

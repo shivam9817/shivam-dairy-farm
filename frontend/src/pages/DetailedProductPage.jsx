@@ -73,7 +73,7 @@ function DetailedProductPage() {
             ) : data ? (
                 <Box
                     margin={"auto"}
-                    marginTop={"12%"}
+                    marginTop={{base:"16%", md:"8%"}}
                     marginBottom={"8%"}
                     px={{ base: "40px", md: "40px" }}
                     width={{ base: "100%", md: "60%" }}

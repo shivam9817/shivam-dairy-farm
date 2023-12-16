@@ -3,7 +3,7 @@ const {connectedDB}=require("./config/db")
 const cors=require("cors")
 const{userRouter}=require("./router/userRouter")
 const{productRouter}=require("./router/productRouter")
-const {authMiddleware}=require("./middleware/authenticate")
+// const {authMiddleware}=require("./middleware/authenticate")
 const { queryRouter } = require("./router/queryRouter")
 const {shippmentRouter}=require("./router/shippmentRouter")
 
@@ -27,6 +27,7 @@ app.get("/",async(req,res)=>{
 app.use("/user",userRouter)
 app.use("/product",productRouter)
 
+// app.use(authMiddleware)
 app.use("/query",queryRouter)
 
 app.use(authMiddleware)
