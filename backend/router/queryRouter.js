@@ -25,17 +25,10 @@ function appendDataToWorksheet(worksheet, data) {
 
 // Route to export data to an Excel file
 queryRouter.post('/export', async (req, res) => {
-  const customerData = req.body;
+  const customerData = [req.body];
   console.log('Received customer data:', customerData);
-  console.log(typeof customerData);
 
-  // Add the current date to each data object
-  const currentDate = new Date().toISOString();
-  customerData.forEach((customer) => {
-    customer.date = currentDate;
-  });
-
-  const filename = 'customer_data.xlsx';
+  const filename = 'customerData.xlsx';
   let workbook = new exceljs.Workbook();
   let worksheet;
 
@@ -46,9 +39,9 @@ queryRouter.post('/export', async (req, res) => {
       worksheet = workbook.getWorksheet(1);
     } else {
       worksheet = workbook.addWorksheet('Sheet 1');
-      // Add common headers assuming each customer object has the same structure
-      const commonHeaders = Object.keys(customerData[0]);
-      worksheet.addRow([...commonHeaders, 'date']);
+      // Add headers assuming each customer object has the same structure
+      const headers = Object.keys(customerData[0]);
+      worksheet.addRow(headers);
     }
 
     // Append customer data to the worksheet
@@ -66,7 +59,7 @@ queryRouter.post('/export', async (req, res) => {
 
 // Route to get data from the Excel file
 queryRouter.get('/getData', async (req, res) => {
-  const filename = 'customer_data.xlsx';
+  const filename = 'customerData.xlsx';
 
   try {
     const workbook = new exceljs.Workbook();
@@ -102,7 +95,7 @@ queryRouter.get('/getData', async (req, res) => {
 // Route to delete data based on customer ID
 queryRouter.delete('/delete/:customerId', async (req, res) => {
   const customerId = req.params.customerId;
-  const filename = 'customer_data.xlsx';
+  const filename = 'customerData.xlsx';
 
   try {
     const workbook = new exceljs.Workbook();

@@ -31,7 +31,7 @@ const Form = {
   address: '',
   mobileNo: '',
   city: '',
-  date: '',
+  // date: '',
   customerId: '',
 
 }
@@ -45,12 +45,13 @@ const PopUpForm = () => {
   const formChangeHandler = (e) => {
     e.preventDefault();
     setForm({
+      ...form,
       [e.target.name]: e.target.value,
       [e.target.email]: e.target.value,
       [e.target.mobileNo]: e.target.value,
       [e.target.address]: e.target.value,
       [e.target.city]: e.target.value,
-      [e.target.date]: e.target.value,
+      // [e.target.date]: e.target.value,
       [e.target.customerId]: e.target.email,
     });
   }
