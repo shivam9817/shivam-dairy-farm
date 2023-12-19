@@ -1,42 +1,43 @@
 const express = require("express");
-const { ShipmentAddress } = require("../model/shippmentModel");
+const { Order } = require("../model/orderModel");
+const { authMiddleware } = require("../middleware/authenticate");
+const addressRouter = express.Router();
 
-const shippmentRouter = express.Router();
+addressRouter.post("/",  async (req, res) => {
+    try {
+        const { orderId, email, shipmentAddress,mobileNumber,city,state,postalCode} = req.body;
+        console.log("sss",orderId,shipmentAddress,mobileNumber,postalCode)
+        // Find the order by orderId
+        const existingOrder = await Order.findById(orderId);
 
-// Route to save shipment address data for a user
-shippmentRouter.post("/", async (req, res) => {
-  try {
-    const { email, shipmentAddress, mobileNumber, postalCode } = req.body;
-    const userID = req.user._id; // Assuming the user ID is available in req.user
+        if (!existingOrder) {
+            return res.status(404).json ({ message: "Order not found for the given orderId" });
+        }
 
-    // Check for duplicate email
-    const existingAddress = await ShipmentAddress.findOne({ email });
+        // Create a new address object
+        const newAddress = {
+            orderId: orderId,
+            email:email,
+            shipmentAddress:shipmentAddress,
+            mobileNumber:mobileNumber,
+            city: city,
+            state: state,
+            postalCode:postalCode,
+            // country: country
+        };
 
-    if (existingAddress) {
-      return res.status(400).json({ error: "Email already exists" });
+        // Ensure that shippmentAddress field is an array and initialize it if undefined
+        existingOrder.shippmentAddress = existingOrder.shippmentAddress || [];
+        existingOrder.shippmentAddress.push(newAddress);
+
+        // Save the changes to the existing order
+        await existingOrder.save();
+
+        res.status(200).json(existingOrder);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Internal Server Error", error: error.message });
     }
-
-    // Create a new shipment address document
-    const newShipmentAddress = new ShipmentAddress({
-      userID,
-      email,
-      shipmentAddress,
-      mobileNumber,
-      postalCode
-      // Other fields related to the shipment address
-    });
-
-    // Save the shipment address data
-    await newShipmentAddress.save();
-
-    res.status(201).json({ message: "Shipment address saved successfully" });
-  } catch (error) {
-    console.error("Error:", error);
-    res.status(500).send("Error occurred while saving shipment address");
-  }
 });
 
-module.exports = {
-  shippmentRouter
-};
- 
+module.exports = { addressRouter };
