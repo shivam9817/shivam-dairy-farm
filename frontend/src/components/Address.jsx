@@ -34,7 +34,7 @@ function Address() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/order', {
+                const response = await axios.get(`${process.env.React_App_Baseurl}/order`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -56,7 +56,7 @@ function Address() {
     const handleCheckout = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:8080/shippment", {
+            const response = await fetch(`${process.env.React_App_Baseurl}/shippment`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -94,7 +94,7 @@ function Address() {
     }
 const handleWhatsApp = (e) => {
     e.preventDefault();
-    window.location.href = "https://wa.me/918962699849"
+    window.location.href = "https://wa.me/919910721348"
 }
     return (
         <>

@@ -12,7 +12,7 @@ const SampleUserData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/query/getData', {
+        const response = await axios.get(`${process.env.React_App_Baseurl}/query/getData`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const SampleUserData = () => {
   const handleDelete = async (userId) => {
     try {
       // Make a DELETE request to your API endpoint for deleting a user
-      await axios.delete(`http://localhost:8080/query/delete/${userId}`, {
+      await axios.delete(`${process.env.React_App_Baseurl}/query/delete/${userId}`, {
         headers: {
           'Content-Type': 'application/json',
           authorization: `${localStorage.getItem('access_token')}`,

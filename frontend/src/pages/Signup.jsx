@@ -34,7 +34,7 @@ function SignUpForm() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8080/user/register", {
+      const response = await axios.post(`${process.env.React_App_Baseurl}/user/register`, {
         username: name,
         email,
         password,

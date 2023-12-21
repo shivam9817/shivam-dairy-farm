@@ -52,7 +52,7 @@ const AddProducts = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:8080/product/create', {
+      const response = await fetch(`https://dairy-farm-backend.onrender.com/product/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

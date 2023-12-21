@@ -28,13 +28,12 @@ function DetailedProductPage() {
     const [type, setType] = useState("");
     const [frequency, setFrequency] = useState("");
     const [litrePerDay, setLitrePerDay] = useState("");
-    const [orderId, setOrderId] = useState(null);
     const navigate = useNavigate()
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/product/${id}`, {
+                const response = await axios.get(`${process.env.React_App_Baseurl}/product/${id}`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -57,7 +56,7 @@ function DetailedProductPage() {
     const handleOrderDetail = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:8080/order/placed", {
+            const response = await fetch(`https://dairy-farm-backend.onrender.com/order/placed`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

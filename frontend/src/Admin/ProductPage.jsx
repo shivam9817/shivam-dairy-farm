@@ -11,7 +11,7 @@ const ProductPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/product', {
+        const response = await axios.get(`${process.env.React_App_Baseurl}/product`, {
           method: "GET",
           headers: {
             "Content-Type": "appliction/json",

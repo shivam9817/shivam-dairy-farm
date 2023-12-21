@@ -48,7 +48,7 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
         return;
       }
       const response = await axios.patch(
-        `http://localhost:8080/product/update/${editedProduct._id}`,
+        `${process.env.React_App_Baseurl}/product/update/${editedProduct._id}`,
         editedProduct,
         {
           headers: {
@@ -91,7 +91,7 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
 
   const handleConfirmDelete = async () => {
     try {
-      const response = await axios.delete(`http://localhost:8080/product/delete/${product._id}`,{
+      const response = await axios.delete(`${process.env.React_App_Baseurl}/product/delete/${product._id}`,{
       method: "DELETE",    
       headers: {
             "Content-Type": "application/json",

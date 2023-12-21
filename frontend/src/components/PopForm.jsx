@@ -69,7 +69,7 @@ const PopUpForm = () => {
   const formSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8080/query/export', {
+      const response = await fetch(`${process.env.React_App_Baseurl}/query/export`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
