@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Flex, Avatar, HStack, Link, IconButton, Menu, MenuButton, MenuList, MenuItem, MenuDivider, useDisclosure, useColorModeValue, Image, useToast } from '@chakra-ui/react';
 import { VStack, Icon, Drawer, DrawerContent, Text } from '@chakra-ui/react';
-import { FiHome, FiCompass, FiMenu, FiBell, FiChevronDown, FiPlus } from 'react-icons/fi';
+import { FiHome, FiCompass, FiMenu, FiBell, FiChevronDown, FiPlus, FiUser } from 'react-icons/fi';
 import logoAlicia from "../asset/logo.jpg"
 import person from "../asset/person.png"
 import { useNavigate } from 'react-router-dom';
@@ -9,16 +9,20 @@ import Dashboard from './Dashboard';
 import ProductPage from './ProductPage';
 import AddProducts from './AddProduct';
 import { IoClose } from 'react-icons/io5';
+import SampleUserData from './SampleData';
+import UserDetails from './UserDetails';
 
 const LinkItems = [
     { name: 'Dashboard', compName: 'Dashboard', heading: 'Dashboard', icon: FiHome },
     { name: 'Add Products', compName: 'AddProducts', heading: 'Add Products', icon: FiPlus },
     { name: 'Products', compName: 'Products', heading: ' Products', icon: FiCompass },
+    { name: 'Sample Data', compName: 'SampleData', heading: ' Sample User Data', icon: FiUser },
+    { name: 'User Details', compName: 'UserDetails', heading: ' Sample User Data', icon: FiUser },
 ];
 
 function SidebarWithHeader({ children }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const [comp, setComp] = useState('Dashboard');
+    const [comp, setComp] = useState("Dashboard");
     const [admin, setadmin] = useState({});
     const navigate = useNavigate();
     const toast = useToast();
@@ -39,6 +43,8 @@ function SidebarWithHeader({ children }) {
         if (compName === 'Dashboard') return <Dashboard />
         else if (compName === 'Products') return <ProductPage />
         else if (compName === 'AddProducts') return <AddProducts />
+        else if (compName === 'SampleData') return <SampleUserData />
+        else if (compName === 'UserDetails') return <UserDetails />
     }
 
 

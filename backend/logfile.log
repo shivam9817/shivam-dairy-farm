@@ -97,3 +97,12 @@
 [2023-12-15T07:11:12.813Z] [INFO] [::ffff:127.0.0.1] User registered: s@gmail.com
 [2023-12-15T07:11:20.831Z] [INFO] [::ffff:127.0.0.1] User logged in: s@gmail.com
 [2023-12-19T14:15:28.916Z] [INFO] [::ffff:127.0.0.1] User logged in: d@gmail.com
+[2023-12-20T15:27:58.138Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-20T16:54:34.538Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-21T05:18:35.372Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-21T06:23:41.616Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-21T06:28:31.940Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-21T06:29:08.281Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-21T06:29:45.661Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-21T06:34:13.494Z] [INFO] [::1] User logged in: xyz12@gmail.com
+[2023-12-21T06:38:26.147Z] [INFO] [::1] User logged in: xyz12@gmail.com

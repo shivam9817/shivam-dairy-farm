@@ -28,7 +28,7 @@ queryRouter.post('/export', async (req, res) => {
   const customerData = [req.body];
   console.log('Received customer data:', customerData);
 
-  const filename = 'customerData.xlsx';
+  const filename = 'sampleData.xlsx';
   let workbook = new exceljs.Workbook();
   let worksheet;
 
@@ -59,7 +59,7 @@ queryRouter.post('/export', async (req, res) => {
 
 // Route to get data from the Excel file
 queryRouter.get('/getData', async (req, res) => {
-  const filename = 'customerData.xlsx';
+  const filename = 'sampleData.xlsx';
 
   try {
     const workbook = new exceljs.Workbook();
@@ -95,7 +95,7 @@ queryRouter.get('/getData', async (req, res) => {
 // Route to delete data based on customer ID
 queryRouter.delete('/delete/:customerId', async (req, res) => {
   const customerId = req.params.customerId;
-  const filename = 'customerData.xlsx';
+  const filename = 'sampleData.xlsx';
 
   try {
     const workbook = new exceljs.Workbook();

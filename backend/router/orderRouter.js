@@ -7,12 +7,11 @@ const { Order } = require("../model/orderModel");
 const orderRouter = express.Router();
 // Place an order and redirect to delivery address pag
 orderRouter.post("/placed", async (req, res) => {
-    try {
-        const items = req.body;
-        
-        // Validate required fields
+  const items = req.body;
+      try {
+      // Validate required fields
         if (!items) {
-            return res.status(400).json({ error: "All fields are required" });
+            return res.status(400).json({ message: "All fields are required" });
         }
 
         // Create a new order
@@ -27,7 +26,7 @@ orderRouter.post("/placed", async (req, res) => {
         res.status(201).json({ message: "Order placed successfully", order: order });
     } catch (error) {
         console.error("Error placing order:", error);
-        res.status(500).json({ error: "Internal Server Error" });
+        res.status(500).json({ message: "Internal Server Error" });
     }
 });
 

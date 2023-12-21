@@ -48,13 +48,13 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
         return;
       }
       const response = await axios.patch(
-        `http:-//localhost:-8080/product/update/${editedProduct._id}`,
+        `http://localhost:8080/product/update/${editedProduct._id}`,
         editedProduct,
         {
-          headers:- {
-            'Content-Type':- 'application/json',
-            authorization:- `${localStorage.getItem('access_token')}`,
-          },
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `${localStorage.getItem("access_token")}`
+          }
         }
       );
 
@@ -81,7 +81,7 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
     e.preventDefault();
     setEditedProduct({
       ...editedProduct,
-      [e.target.name]:- e.target.value,
+      [e.target.name]:e.target.value,
     });
   };
 
@@ -91,12 +91,11 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
 
   const handleConfirmDelete = async () => {
     try {
-      const response = await axios.delete(
-        `http:-//localhost:-8080/product/delete/${product._id}`,
-        {
-          headers:- {
-            'Content-Type':- 'application/json',
-            authorization:- `${localStorage.getItem('access_token')}`,
+      const response = await axios.delete(`http://localhost:8080/product/delete/${product._id}`,{
+      method: "DELETE",    
+      headers: {
+            "Content-Type": "application/json",
+            authorization: `${localStorage.getItem("access_token")}`
           },
         }
       );
@@ -156,7 +155,7 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
         </Box>
         <Box>
      
-            <Button m={4} colorScheme={"blue"} onClick={handleEditClick}>
+            <Button m={4} colorScheme="blue" onClick={handleEditClick}>
               Edit
             </Button>
        
@@ -223,7 +222,7 @@ const ProductDetail = ({ product, handleEdit, handleDelete }) => {
             </ModalContent>
           </Modal>
          
-            <Button m={4} colorScheme={"red"} onClick={handleDeleteClick}>
+            <Button m={4} colorScheme="red" onClick={handleDeleteClick}>
               Remove
             </Button>
       

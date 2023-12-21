@@ -12,8 +12,8 @@ const orderItemSchema = new mongoose.Schema({
     required: true
   },
  
-  quantity: {
-    type: Number,
+  quantity: { 
+    type: String,
     required: true
   },
   type: {
@@ -35,6 +35,10 @@ const addressSchema = new mongoose.Schema({
       ref: 'User',
       // required: true
     },
+    name: {
+      type: String,
+      required: true
+    },
     email: {
       type: String,
       required: true
@@ -42,9 +46,17 @@ const addressSchema = new mongoose.Schema({
     shipmentAddress: {
       type: String,
       required: true
-    },
+    },    
     mobileNumber: {
       type: Number,
+      required: true
+    },
+    city: {
+      type: String,
+      required: true
+    },
+    state: {
+      type: String,
       required: true
     },
     postalCode: {
