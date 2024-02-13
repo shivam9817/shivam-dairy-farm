@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a20cb253.css",
+    "main.js": "/static/js/main.dafce881.js",
+    "static/js/787.9e9f4ffd.chunk.js": "/static/js/787.9e9f4ffd.chunk.js",
+    "static/media/popupimg.jpg": "/static/media/popupimg.f9dafb7f27304c082abe.jpg",
+    "static/media/milk-products-dairy.webp": "/static/media/milk-products-dairy.5d1237306c1c3a496a68.webp",
+    "static/media/signinImg.jpg": "/static/media/signinImg.c4fa8d377afe552c4eee.jpg",
+    "static/media/1200px-004-soymilk.jpg": "/static/media/1200px-004-soymilk.e5ec8edb52e3bf70de66.jpg",
+    "static/media/logoAlicia.png": "/static/media/logoAlicia.2008c66370250a4f25f7.png",
+    "static/media/logo.jpg": "/static/media/logo.e0f11c2fa5f1f0abb24a.jpg",
+    "static/media/about.jpg": "/static/media/about.729ba4e16c7f9a21f655.jpg",
+    "static/media/person.png": "/static/media/person.bff9c9b27a83b862d451.png",
+    "static/media/tagLine.png": "/static/media/tagLine.f833fa0b9bef09cb6a17.png",
+    "static/media/download.jpeg": "/static/media/download.4d3625618a502a7b50a7.jpeg",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.a20cb253.css.map": "/static/css/main.a20cb253.css.map",
+    "main.dafce881.js.map": "/static/js/main.dafce881.js.map",
+    "787.9e9f4ffd.chunk.js.map": "/static/js/787.9e9f4ffd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a20cb253.css",
+    "static/js/main.dafce881.js"
+  ]
+}
