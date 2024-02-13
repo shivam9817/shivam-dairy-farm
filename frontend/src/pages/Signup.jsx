@@ -34,6 +34,7 @@ function SignUpForm() {
     e.preventDefault();
 
     try {
+      axios.defaults.withCredentials = true;
       const response = await axios.post(`${process.env.React_App_Baseurl}/user/register`, {
         username: name,
         email,

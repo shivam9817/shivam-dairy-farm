@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a20cb253.css",
-    "main.js": "/static/js/main.dafce881.js",
+    "main.js": "/static/js/main.ed1b3398.js",
     "static/js/787.9e9f4ffd.chunk.js": "/static/js/787.9e9f4ffd.chunk.js",
     "static/media/popupimg.jpg": "/static/media/popupimg.f9dafb7f27304c082abe.jpg",
     "static/media/milk-products-dairy.webp": "/static/media/milk-products-dairy.5d1237306c1c3a496a68.webp",
@@ -20,11 +20,11 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.a20cb253.css.map": "/static/css/main.a20cb253.css.map",
-    "main.dafce881.js.map": "/static/js/main.dafce881.js.map",
+    "main.ed1b3398.js.map": "/static/js/main.ed1b3398.js.map",
     "787.9e9f4ffd.chunk.js.map": "/static/js/787.9e9f4ffd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a20cb253.css",
-    "static/js/main.dafce881.js"
+    "static/js/main.ed1b3398.js"
   ]
 }
